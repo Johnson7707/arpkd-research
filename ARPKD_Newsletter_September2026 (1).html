@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARPKD Research Network — September 2026 Issue 2</title>
+<style>
+  :root {
+    --navy: #0d3b6e;
+    --blue: #1a5c96;
+    --green: #1B5E20;
+    --lightgreen: #E8F5E9;
+    --grey: #555;
+    --lightgrey: #f4f6f9;
+    --border: #d0dae8;
+    --text: #1a1a2e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', serif;
+    color: var(--text);
+    background: #fff;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  /* NAV */
+  nav {
+    background: var(--navy);
+    padding: 12px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav .nav-title { color: #fff; font-size: 13px; letter-spacing: 0.05em; font-family: 'Arial', sans-serif; }
+  nav a {
+    color: #a8c4e0;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: 'Arial', sans-serif;
+    padding: 6px 14px;
+    border: 1px solid #a8c4e0;
+    border-radius: 3px;
+    transition: all 0.2s;
+  }
+  nav a:hover { background: #a8c4e0; color: var(--navy); }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    color: white;
+    padding: 60px 40px 50px;
+    text-align: center;
+  }
+  header .issue-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: #a8c4e0;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+  header h1 {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.3;
+    max-width: 700px;
+    margin: 0 auto 16px;
+  }
+  header .meta {
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    color: #a8c4e0;
+    margin-top: 12px;
+  }
+  header .stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 36px;
+    flex-wrap: wrap;
+  }
+  header .stat { text-align: center; }
+  header .stat .num { font-size: 36px; font-weight: bold; color: #fff; line-height: 1; }
+  header .stat .label { font-family: 'Arial', sans-serif; font-size: 11px; color: #a8c4e0; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* LAYOUT */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 32px; }
+
+  /* SECTION HEADERS */
+  .section-header {
+    border-left: 4px solid var(--blue);
+    padding: 6px 0 6px 16px;
+    margin: 52px 0 24px;
+  }
+  .section-header .section-num {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    color: var(--blue);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .section-header h2 {
+    font-size: 22px;
+    font-weight: normal;
+    color: var(--navy);
+    margin-top: 4px;
+  }
+
+  /* FIELD GROUPS */
+  .field-group {
+    background: var(--navy);
+    color: white;
+    padding: 8px 16px;
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 28px 0 12px;
+    letter-spacing: 0.04em;
+  }
+
+  /* QUESTIONS */
+  .question {
+    padding: 10px 14px;
+    margin: 6px 0;
+    border-left: 3px solid var(--border);
+    font-size: 15px;
+    color: var(--text);
+  }
+  .question .q-label { font-family: 'Arial', sans-serif; font-weight: bold; color: var(--blue); font-size: 13px; }
+  .question.answered {
+    background: var(--lightgreen);
+    border-left-color: var(--green);
+    padding: 16px;
+    border-radius: 0 4px 4px 0;
+    margin: 12px 0;
+  }
+  .question.answered .q-label { color: var(--green); }
+  .answered-content {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.65;
+  }
+  .answered-content .attribution {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+  .answered-content blockquote {
+    font-style: italic;
+    border-left: 2px solid var(--green);
+    padding-left: 12px;
+    margin: 8px 0;
+    color: #444;
+  }
+  .answered-content .numbered {
+    margin: 6px 0 6px 16px;
+    font-size: 13px;
+  }
+  .answered-content .numbered span { font-weight: bold; color: var(--green); }
+
+  /* CITATIONS */
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .cite { font-size: 13px; font-family: 'Arial', sans-serif; }
+
+  /* CROSS CONNECTIONS */
+  .connection-card {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    margin: 12px 0;
+  }
+  .connection-card h4 { color: var(--navy); font-size: 16px; margin-bottom: 8px; }
+  .connection-card p { font-size: 14px; color: #444; line-height: 1.6; }
+  .connection-card .links { margin-top: 10px; font-size: 13px; font-family: 'Arial', sans-serif; }
+
+  /* FUNDING TABLE */
+  .funding-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+  .funding-table th { background: var(--blue); color: white; padding: 9px 12px; text-align: left; font-family: 'Arial', sans-serif; font-weight: bold; font-size: 12px; }
+  .funding-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .funding-table tr:nth-child(even) td { background: var(--lightgrey); }
+
+  /* RESEARCHER LIST */
+  .researcher {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .researcher .r-name { font-weight: bold; color: var(--navy); }
+  .researcher .r-title { font-size: 12px; color: var(--grey); font-family: 'Arial', sans-serif; font-style: italic; margin-top: 2px; }
+  .researcher .r-inst { font-size: 13px; color: var(--grey); }
+  .researcher .r-note { font-size: 12px; color: var(--green); font-family: 'Arial', sans-serif; font-style: italic; margin-top: 3px; }
+
+  /* COLLAB BOX */
+  .collab-box {
+    background: var(--lightgrey);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 24px;
+    margin: 16px 0;
+    font-size: 14px;
+    color: var(--grey);
+    font-style: italic;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    color: #a8c4e0;
+    text-align: center;
+    padding: 36px 40px;
+    margin-top: 60px;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  footer a { color: #a8c4e0; }
+
+  /* DIVIDER */
+  hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+  /* INTRO */
+  .intro-box {
+    background: var(--lightgrey);
+    border-left: 4px solid var(--blue);
+    padding: 20px 24px;
+    margin: 28px 0;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 40px 20px; }
+    header h1 { font-size: 24px; }
+    .container { padding: 0 16px; }
+    nav { padding: 10px 16px; }
+    header .stats { gap: 24px; }
+    .funding-table { font-size: 11px; }
+    .funding-table th, .funding-table td { padding: 7px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-title">ARPKD Research Network</span>
+  <a href="https://johnson7707.github.io/arpkd-research">View Research Document →</a>
+</nav>
+
+<header>
+  <div class="issue-label">September 2026 · Issue 2</div>
+  <h1>ARPKD Research Network Newsletter</h1>
+  <div class="meta">Nathan &amp; Flora Johnson &nbsp;·&nbsp; nathaniel_johnson@yahoo.com &nbsp;·&nbsp; Sent monthly</div>
+  <div class="stats">
+    <div class="stat"><div class="num">43</div><div class="label">Investigators</div></div>
+    <div class="stat"><div class="num">12</div><div class="label">Countries</div></div>
+    <div class="stat"><div class="num">37</div><div class="label">Open Questions</div></div>
+    <div class="stat"><div class="num">10</div><div class="label">Answered</div></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="intro-box">
+    My name is Nathan Johnson. My wife Flora and I are the parents of Gianna, a child with ARPKD-CHF. Over the past fourteen months we have been conducting a systematic review of the literature across hepatology, biliary biology, gene therapy, organoid modeling, and genetics as they relate to this disease. What began as a family effort has grown into a network of 43 investigators across 12 countries, several of whom have already contributed answered questions, unpublished observations, and corrections that have meaningfully improved this work.
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section-header">
+    <div class="section-num">Section 1</div>
+    <h2>Open Questions for the Research Community</h2>
+  </div>
+  <p style="font-size:14px;color:var(--grey);margin-bottom:20px;">If your work addresses any of these questions, a brief reply is all we ask. Preliminary data, an unpublished observation, or a paper we may have missed is equally valuable. Answered questions appear at the bottom of each field group.</p>
+
+  <div class="field-group">MOLECULAR MECHANISMS &amp; CELL SIGNALING</div>
+  <div class="question"><span class="q-label">Q1. </span>Does the SPTAN1/RAC1 pathway operate in ARPKD biliary epithelial cells? Confirmed in kidney CNT cells (Morizane, <a href="https://doi.org/10.1002/advs.202524001">Adv Sci 2026</a>) — untested in cholangiocytes.</div>
+  <div class="question"><span class="q-label">Q2. </span>Does CXCR3 blockade reduce biliary cyst fluid secretion, or only periportal fibrosis?</div>
+  <div class="question"><span class="q-label">Q3. </span>Is AMPK → LATS1/2 → YAP/TAZ the mechanism behind bempedoic acid's liver benefit in PCK rat?</div>
+  <div class="question"><span class="q-label">Q4. </span>Does tolvaptan (V2R antagonist) have any secondary effect on ARPKD biliary disease?</div>
+  <div class="question"><span class="q-label">Q5. </span>Has FXR been directly measured in PKHD1-deficient or fibrocystin-null biliary epithelial cells?</div>
+  <div class="question"><span class="q-label">Q6. </span>Is CDK1 upregulated downstream of Scribble/YAP dysregulation in PKHD1-/- mouse models?</div>
+  <div class="question"><span class="q-label">Q7. </span>Does somatostatin signaling through ciliary SSTR2 affect TGR5 ciliary localization in FPC-deficient cells?</div>
+  <div class="question"><span class="q-label">Q8. </span>Is SPTAN1 (α-II spectrin) reduced in FPC-deficient cholangiocytes, and does this disrupt integrin-BM anchoring?</div>
+
+  <div class="question answered">
+    <span class="q-label">Q9. ANSWERED — </span>Does the SPTAN1/RAC1 pathway operate in ARPKD kidney cells?
+    <div class="answered-content">
+      Kuraoka S, Morizane R et al. confirmed RAC1/SPTAN1 cystogenesis pathway in ARPKD kidney collecting duct cells. Biliary cell confirmation remains an open question. (<a href="https://doi.org/10.1002/advs.202524001" class="cite">Adv Sci 2026. DOI: 10.1002/advs.202524001</a>)
+    </div>
+  </div>
+
+  <div class="question answered">
+    <span class="q-label">Q10. ANSWERED — </span>Has ICD15 (the fibrocystin C-terminal mitochondrial domain) been studied in biliary cholangiocytes or CHF models?
+    <div class="answered-content">
+      <div class="attribution">Prof. Feng Qian (University of Maryland — <a href="https://doi.org/10.1038/s41467-023-38688-0">Walker, Qian et al. Nat Commun 14:3217, 2023</a>. Permission granted September 4, 2026):</div>
+      <blockquote>"To my knowledge, I am not aware of any study that has specifically investigated the fibrocystin ICD15 domain, particularly its role in mitochondrial function, in biliary cholangiocytes."</blockquote>
+      The D67 digenic mouse model used in the 2023 paper limited liver phenotype analysis. Prof. Qian characterizes the ICD15-in-biliary-cells hypothesis as "interesting and biologically testable" and plans to extend ICD15 studies to liver/biliary cells.<br><br>
+      <strong style="color:var(--green)">⭐ Additional:</strong> Proximity of c.10926G>A (Met3642Ile) to the ICD15-encoding region raises the possibility that if this variant disrupts exon splicing, it could specifically alter ICD15 production. Liver is considerably more accessible to exogenous gene expression approaches than kidney. <em>(Prof. Qian's scientific opinion — not a published finding)</em>
+    </div>
+  </div>
+
+  <div class="field-group">ECM &amp; BILIARY BASEMENT MEMBRANE</div>
+  <div class="question"><span class="q-label">Q1. </span>Has tranexamic acid or any plasmin inhibitor been tested in a PKHD1-deficient model for biliary laminin/collagen IV preservation?</div>
+  <div class="question"><span class="q-label">Q2. </span>Have PRO-C4 (type IV collagen formation) or C4M (type IV collagen degradation) been measured in any CHF or Caroli disease cohort?</div>
+  <div class="question"><span class="q-label">Q3. </span>What is the current clinical development status of INT-767 (dual FXR/TGR5 agonist)?</div>
+  <div class="question"><span class="q-label">Q4. </span>What agents can restore laminin or type IV collagen production in FPC-deficient biliary cells?</div>
+
+  <div class="field-group">DRUG DISCOVERY &amp; PHARMACOLOGY</div>
+  <div class="question"><span class="q-label">Q1. </span>Does ACT-777991 (dual somatostatin/dopamine agonist) reduce biliary fibrosis in a PKHD1-specific model?</div>
+  <div class="question"><span class="q-label">Q2. </span>Does SCY-770 (direct AMPK activator) benefit ARPKD biliary fibrosis independently of bempedoic acid?</div>
+  <div class="question"><span class="q-label">Q3. </span>Does elexacaftor simultaneously improve kidney AND biliary disease in the same PKHD1-deficient cells?</div>
+
+  <div class="question answered">
+    <span class="q-label">Q4. ANSWERED — </span>Have CFTR correctors been tested in PKHD1-deficient biliary cells and animal models?
+    <div class="answered-content">
+      <div class="attribution">Prof. Liudmila Cebotaru (Johns Hopkins University. Permission granted September 2, 2026):</div>
+      <blockquote>"The CFTR correctors would reduce the proliferation, inflammation, fibrosis and dilatation of bile ducts in PKHD1-deficient biliary cells, and animal models. Truncated form of CFTR, which was introduced in cells and mouse models works as a genetic corrector and has the ability to bind ER-retained CFTR, reduce ER calcium, and carry CFTR, PC2, PC1, and FPC to the correct cellular location."</blockquote>
+      Published support: <a href="https://doi.org/10.1152/ajpgi.00255.2022" class="cite">(1) Yanda, Zeidan, Cebotaru — Am J Physiol GI 2023</a> · <a href="https://doi.org/10.1152/ajpgi.00109.2025" class="cite">(2) Ciobanu, Outeda, Guggino, Cebotaru — Am J Physiol GI 2025</a> · <a href="https://doi.org/10.1152/ajpcell.00057.2025" class="cite">(3) Ciobanu, Cebotaru — Am J Physiol Cell Physiol 2025</a>
+      <div class="numbered"><span>(1)</span> HSP70 and HSP90 are druggable targets — silencing either inhibits cyst growth in FPC-null cholangiocytes in 3D culture.</div>
+      <div class="numbered"><span>(2)</span> CFTR and PC2 are both INCREASED in primary cilia of ARPKD cholangiocytes. VX-809 restores both to normal.</div>
+      <div class="numbered"><span>(3)</span> Standard liver and kidney function labs are NORMAL despite active histological ARPKD disease.</div>
+      <div class="numbered"><span>(4)</span> Liver disease precedes kidney disease — 60% of ARPKD mice show liver phenotype at 3 months vs only 20% with severe kidney disease.</div>
+      <div class="numbered"><span>(5)</span> AAV1 transduces both cholangiocytes AND hepatocytes in ARPKD liver.</div>
+      <div class="numbered"><span>(6)</span> α2,3-Sialic acid (MAL) is the dominant AAV1 receptor on ARPKD biliary cyst surfaces — explains preferential targeting.</div>
+      <div class="numbered"><span>(7)</span> Δ27-264-CFTR construct (~5,060 bp) fits within AAV packaging capacity.</div>
+      <div class="numbered"><span>(8)</span> ⭐ Harris-Cebotaru scientific collaboration already exists — pkd1RC/RC ADPKD mice provided by Dr. Peter C. Harris (Mayo Clinic).</div>
+    </div>
+  </div>
+
+  <div class="field-group">GENE THERAPY &amp; DELIVERY</div>
+  <div class="question"><span class="q-label">Q1. </span>Can lentiviral delivery restore functional FPC expression in human PKHD1-deficient biliary organoids?</div>
+  <div class="question"><span class="q-label">Q2. </span>Can ERCP retrograde biliary delivery achieve sufficient transfection of intrahepatic bile ducts in PKHD1-deficient human-sized models?</div>
+  <div class="question"><span class="q-label">Q3. </span>Does KRT19-promoter restriction of AAV-base editor prevent hepatocyte off-target editing in ARPKD liver?</div>
+
+  <div class="question answered">
+    <span class="q-label">Q4. ANSWERED — </span>Has biliary AAV gene therapy been tested in a PKHD1-specific model?
+    <div class="answered-content">
+      <div class="attribution">Prof. Holger Willenbring (UCSF. Permission granted September 3, 2026):</div>
+      <blockquote>"Recent progress in gene delivery and genome editing technologies support the feasibility of gene therapy of the liver disease in ARPKD-CHF, which has been challenging because of the large size of the PKHD1 gene."</blockquote>
+    </div>
+  </div>
+
+  <div class="question answered">
+    <span class="q-label">Q5. ANSWERED — </span>Base editing PKD1/PKHD1 — what is the current state of the art?
+    <div class="answered-content">
+      Ibel A, Krappitz M, Kaminski MM et al. confirmed ABEmax base editing corrected a PKD1 missense variant in vivo. Only 5% liver editing efficiency was sufficient to produce significant liver cyst reduction in ADPKD mice. (<a href="https://doi.org/10.1016/j.ymthe.2025.08.026" class="cite">Mol Ther 33(11):5373-5382, 2025. DOI: 10.1016/j.ymthe.2025.08.026. PMID: 40842155</a>)
+    </div>
+  </div>
+
+  <div class="field-group">IMMUNOLOGY &amp; MACROPHAGE BIOLOGY</div>
+  <div class="question"><span class="q-label">Q1. </span>Does bacteriology in ARPKD bile ducts differ from primary biliary disease? Which organisms predominate?</div>
+  <div class="question answered">
+    <span class="q-label">Q2. ANSWERED — </span>What organisms predominate in ARPKD cholangitis?
+    <div class="answered-content">
+      E. coli (22-37%), Pseudomonas spp. (28%), Enterococcus faecalis (15-39%). COBRA trial: 1-day antibiotics after biliary drainage noninferior to 4-7 days (413 patients, 31 Dutch centers). (<a href="https://doi.org/10.3390/antibiotics14070679" class="cite">Cozma MA et al. Antibiotics 2025</a> · <a href="https://doi.org/10.1186/s13063-026-09524-7" class="cite">Overdevest AG et al. COBRA trial, Trials 2026</a>)
+    </div>
+  </div>
+
+  <div class="field-group">CLINICAL &amp; TRANSLATIONAL</div>
+  <div class="question"><span class="q-label">Q1. </span>Can ELF score (HA + PIIINP + TIMP-1) be validated as a serial endpoint for ARPKD-CHF clinical trials?</div>
+  <div class="question"><span class="q-label">Q2. </span>Has MRE liver stiffness been measured serially in ARPKD-CHF patients to assess treatment response?</div>
+  <div class="question"><span class="q-label">Q3. </span>Is SPP1/osteopontin measurable in ARPKD patient serum and does it correlate with CHF severity?</div>
+  <div class="question answered">
+    <span class="q-label">Q4. ANSWERED — </span>What are validated non-biopsy endpoints for ARPKD-CHF clinical trials?
+    <div class="answered-content">
+      IMAGE-ARPKD trial (<a href="https://clinicaltrials.gov/study/NCT07201025" class="cite">NCT07201025</a>, Flask CA, Hartung EA, Dell KM et al., <a href="https://doi.org/10.1007/s00247-026-06372-9" class="cite">Pediatric Radiology 2026</a>) confirms: MRE liver stiffness = 3.60 kPa in ARPKD patients with portal hypertension. Liver biopsy NOT recommended. Total kidney volume is not useful for ARPKD trials. MRE + SPP1 + ELF score are the recommended endpoints.
+    </div>
+  </div>
+  <div class="question answered">
+    <span class="q-label">Q5. ANSWERED — </span>What is the dominant cause of post-transplant mortality in ARPKD?
+    <div class="answered-content">
+      64-80% of mortality in ARPKD kidney transplant patients is from cholangitis and hepatobiliary sepsis — not kidney failure. Treating CHF is survival-critical, not just quality of life. (<a href="https://pubmed.ncbi.nlm.nih.gov/23593929/" class="cite">Telega, Cronin, Avner. Pediatr Transplant 2013. PMID: 23593929</a>)
+    </div>
+  </div>
+  <div class="question answered">
+    <span class="q-label">Q6. ANSWERED — </span>Are mTOR inhibitors safe in ARPKD-CHF?
+    <div class="answered-content">
+      mTOR inhibitors are NOT safe for ARPKD patients with liver involvement. Three independent biliary harm mechanisms confirmed. Every ARPKD trial using mTOR inhibitors MUST include dedicated hepatic endpoints. (<a href="https://doi.org/10.1002/hep.32298" class="cite">Masyuk AI et al. Hepatology 75(5):1110, 2022</a>)
+    </div>
+  </div>
+
+  <div class="field-group">ORGANOIDS &amp; MODELING</div>
+  <div class="question"><span class="q-label">Q1. </span>Can the Peltz/Stanford PKHD1 hepatic organoid platform be used for FXR agonist + SPP1 siRNA combination screening?</div>
+  <div class="question"><span class="q-label">Q2. </span>Has the Huch periportal assembloid been applied to ARPKD-CHF modeling using PKHD1-mutant cells?</div>
+  <div class="question"><span class="q-label">Q3. </span>Can Morizane's ARPKD organoid-on-chip be combined with ETV2-vascularization to create the first vascularized ARPKD kidney organoid?</div>
+  <div class="question answered">
+    <span class="q-label">Q4. ANSWERED — </span>Is the Morizane ARPKD organoid-on-chip platform moving toward clinical translation?
+    <div class="answered-content">
+      <div class="attribution">Dr. Ryuji Morizane (MGH/Harvard. Permission granted September 3, 2026):</div>
+      Pursuing translational studies with the longer-term goal of moving toward clinical studies if results are sufficiently promising. Letter of support from our network is welcomed.
+    </div>
+  </div>
+
+  <div class="field-group">GENETICS &amp; VARIANT ANALYSIS</div>
+  <div class="question"><span class="q-label">Q1. </span>Does c.10926G>A (Met3642Ile) disrupt an exonic splicing enhancer (ESE) motif, causing exon skipping and functional truncation?</div>
+  <div class="question"><span class="q-label">Q2. </span>Can urine-derived renal tubular epithelial cells provide RNA for non-invasive PKHD1 variant confirmation?</div>
+  <div class="question answered">
+    <span class="q-label">Q3. ANSWERED — </span>Is Met3642Ile (c.10926G>A) reclassified from VUS toward pathogenic at any institution?
+    <div class="answered-content">
+      <div class="attribution">Prof. Peter C. Harris (Mayo Clinic, September 2026):</div>
+      This variant has been observed in trans with a confirmed pathogenic PKHD1 variant in a Mayo family — relevant PM3 context. Under formal clinical ACMG guidelines it would still be scored as a VUS. This is a research evaluation only, not a clinical reclassification.
+    </div>
+  </div>
+  <div class="question answered">
+    <span class="q-label">Q4. ANSWERED — </span>Have CHF variants in genotype zones 1-3 been associated with distinct hepatic outcomes?
+    <div class="answered-content">
+      Zone 3 (AA 2625-4074) is associated with the poorest hepatic outcomes — our daughter's variants (His3124Tyr at AA 3124 and Met3642Ile at AA 3642) both map to Zone 3. (<a href="https://doi.org/10.3390/genes17020229" class="cite">Lapunzina-Soler P et al. Genes 17(2):229, 2026</a>) This explains the liver-predominant phenotype.
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION 2 -->
+  <div class="section-header">
+    <div class="section-num">Section 2</div>
+    <h2>Collaboration Registry</h2>
+  </div>
+  <p style="font-size:14px;color:var(--grey);margin-bottom:16px;">This section is reserved for researchers who have explicitly requested to be listed. To be included, please reply with: collaboration type, resource available, what you need, and contact preference.</p>
+  <div class="collab-box">No entries yet — reply to this newsletter to be listed.</div>
+
+  <hr>
+
+  <!-- SECTION 3 -->
+  <div class="section-header">
+    <div class="section-num">Section 3</div>
+    <h2>Funding Opportunities</h2>
+  </div>
+  <p style="font-size:14px;color:var(--grey);margin-bottom:16px;">A letter of support from the Johnson family network is available for any of these mechanisms. Please reply to this newsletter.</p>
+
+  <table class="funding-table">
+    <tr><th>Mechanism</th><th>ARPKD-CHF Relevance</th><th>Scope</th><th>Deadline</th><th>Link</th></tr>
+    <tr><td>PKD Foundation — Translational Research Activity</td><td>CDK1 inhibitor, TXA in Pkhd1 model, ECM restoration</td><td>Up to $500K</td><td>Jan 19, 2027</td><td><a href="https://www.pkdcure.org">pkdcure.org</a></td></tr>
+    <tr><td>Kidney Research UK — Second Main Round</td><td>UK investigators: Edinburgh, Cambridge, UCL, GOSH</td><td>Up to £300K / 3 yr</td><td>Sep 8, 2026</td><td><a href="https://www.kidneyresearchuk.org">kidneyresearchuk.org</a></td></tr>
+    <tr><td>NIH NIDDK — R21 Exploratory</td><td>FXR in FPC-null biliary cells, PRO-C4/C4M, TXA in PCK rat</td><td>Up to $275K / 2 yr</td><td>Feb/Jun/Oct</td><td><a href="https://grants.nih.gov">grants.nih.gov</a></td></tr>
+    <tr><td>NIH NIDDK — R01 Research Project</td><td>CDK1 as ARPKD-CHF target, PKHD1 base editing, biliary ECM</td><td>Up to $500K+ / 5 yr</td><td>Feb/Jun/Oct</td><td><a href="https://grants.nih.gov">grants.nih.gov</a></td></tr>
+    <tr><td>American Liver Foundation</td><td>Biliary ECM, FXR in cholangiopathies, CDK1 in biliary cysts</td><td>$225K / 3 yr</td><td>Annual</td><td><a href="https://www.liverfoundation.org">liverfoundation.org</a></td></tr>
+    <tr><td>Cancer Research UK — Senior Fellowship</td><td>Biliary regeneration, ECM, cholangiocarcinoma risk</td><td>Up to £1.75M / 6 yr</td><td>Oct 1, 2026</td><td><a href="https://www.cancerresearchuk.org">cancerresearchuk.org</a></td></tr>
+    <tr><td>AASLD Foundation Research Award</td><td>Liver biology; biliary ECM, FXR, CDK1 in biliary cysts</td><td>$100K / 1 yr</td><td>Dec 7, 2026</td><td><a href="https://www.aasldfoundation.org">aasldfoundation.org</a></td></tr>
+    <tr><td>IMAGE-ARPKD Trial (<a href="https://clinicaltrials.gov/study/NCT07201025">NCT07201025</a>)</td><td>MRE liver stiffness endpoint, ages 8-21. Biomarker sub-study: PICP, PRO-C4/C4M, SPP1</td><td>NIH-funded</td><td>Actively recruiting</td><td><a href="https://clinicaltrials.gov/study/NCT07201025">ClinicalTrials.gov</a></td></tr>
+  </table>
+
+  <hr>
+
+  <!-- SECTION 4 -->
+  <div class="section-header">
+    <div class="section-num">Section 4</div>
+    <h2>Key Cross-Connections</h2>
+  </div>
+  <p style="font-size:14px;color:var(--grey);margin-bottom:20px;">Independent lines of evidence converging on the same targets — these are the highest-confidence therapeutic nodes.</p>
+
+  <div class="connection-card">
+    <h4>CDK1 as convergence point</h4>
+    <p>Two independent YAP overactivation pathways (FXR/YAP loss + Scribble/YAP mislocalization) both drive CDK1 expression. CDK1 is now confirmed as the top biliary proliferative driver in PKHD1-deficient liver. CDK1 inhibition (RO-3306) reduces both cysts AND fibrosis in vivo in the correct PKHD1 model.</p>
+    <div class="links"><a href="https://doi.org/10.1016/j.isci.2026.113369">iScience 2026</a> · <a href="https://doi.org/10.1016/j.jhep.2022.01.017">Fabris L et al. J Hepatol 2022</a> · <a href="https://doi.org/10.1038/s41556-021-00666-z">Djouder N et al. Nat Cell Biol 2021</a></div>
+  </div>
+
+  <div class="connection-card">
+    <h4>SPP1/STAT3 — five independent confirmations</h4>
+    <p>Human CHF scRNA-seq, PKHD1 hepatic organoids (Peltz), PCK rat transcriptomics, Pkhd1-KO mouse IHC/western, and AAV8 knockdown in ARPKD mice. Cholangiocyte-specific SPP1 knockdown reduces biliary fibrosis in PKHD1-deficient mice — the most validated therapeutic approach in ARPKD-CHF.</p>
+    <div class="links"><a href="https://pubmed.ncbi.nlm.nih.gov/42265280/">PMID: 42265280 — Liebau/Ziegler group. Commun Biol 2026. DOI: 10.1038/s42003-026-10476-6</a></div>
+  </div>
+
+  <div class="connection-card">
+    <h4>SPTAN1/RAC1 — Morizane ↔ Waddell/Boulter connection</h4>
+    <p>SPTAN1 reduced in FPC-deficient kidney cells → RAC1 hyperactivation (Morizane 2026). α-II spectrin also anchors integrin-basement membrane attachments. If SPTAN1 is reduced in FPC-deficient cholangiocytes, it could simultaneously drive RAC1 cystogenesis AND disrupt the biliary basement membrane. One molecule may connect both mechanisms.</p>
+    <div class="links"><a href="https://doi.org/10.1002/advs.202524001">Kuraoka S, Morizane R et al. Adv Sci 2026</a> · <a href="https://doi.org/10.1242/dmm.052835">Waddell SH, Brennan E, Boulter L. Dis Model Mech 2026</a></div>
+  </div>
+
+  <div class="connection-card">
+    <h4>Cebotaru AAV1-CFTR vs Trikafta</h4>
+    <p>AAV1-Δ27-264-CFTR reduces liver cyst area and proliferation in ARPKD mice; AAV1 preferentially targets ARPKD cysts via α2,3-sialylated glycan receptors. Same mechanism confirmed in kidney. Gene therapy bypasses the potentiator problem entirely.</p>
+    <div class="links"><a href="https://doi.org/10.1152/ajpgi.00109.2025">Ciobanu C, Outeda P, Guggino WB, Cebotaru L. Am J Physiol GI 2025</a> · <a href="https://doi.org/10.1152/ajpcell.00057.2025">Ciobanu C, Cebotaru L. Am J Physiol Cell Physiol 2025</a></div>
+  </div>
+
+  <hr>
+
+  <!-- SECTION 5 -->
+  <div class="section-header">
+    <div class="section-num">Section 5</div>
+    <h2>Research Network</h2>
+  </div>
+  <p style="font-size:14px;color:var(--grey);margin-bottom:20px;">43 researchers across 12 countries, spanning hepatology, gene therapy, clinical medicine, organoid modeling, genetics, and biliary biology.</p>
+
+  <div class="field-group">HEPATIC &amp; BILIARY BIOLOGY</div>
+  <div class="researcher"><div class="r-name">Dr. Jesus M. Banales</div><div class="r-title">Principal Investigator, Biogipuzkoa Health Research Institute</div><div class="r-inst">Donostia-San Sebastián, Spain</div></div>
+  <div class="researcher"><div class="r-name">Dr. Luke Boulter</div><div class="r-title">Cancer Research UK Senior Research Fellow, University of Edinburgh</div><div class="r-inst">Edinburgh, UK</div></div>
+  <div class="researcher"><div class="r-name">Dr. Massimiliano Cadamuro</div><div class="r-title">Associate Professor of Anatomy, Università Milano-Bicocca</div><div class="r-inst">Milan / Padua, Italy</div></div>
+  <div class="researcher"><div class="r-name">Prof. Regina T. Chung</div><div class="r-title">Professor of Medicine, Harvard Medical School; Director of Hepatology, MGH</div><div class="r-inst">Boston, MA, USA</div></div>
+  <div class="researcher"><div class="r-name">Prof. Liran Dekel</div><div class="r-title">Professor, Hebrew University; Head, Pediatric Stem Cell Research Institute, Sheba Medical Center</div><div class="r-inst">Jerusalem, Israel</div></div>
+  <div class="researcher"><div class="r-name">Dr. Nabil Djouder</div><div class="r-title">Head of Growth Factors, Nutrients and Cancer Group, CNIO</div><div class="r-inst">Madrid, Spain</div><div class="r-note">Replied Sep 2, 2026 — permission granted for FXR/YAP data</div></div>
+  <div class="researcher"><div class="r-name">Prof. Paul Gissen</div><div class="r-title">Professor of Paediatric Metabolic Disease, UCL GOS Institute of Child Health</div><div class="r-inst">London, UK</div></div>
+  <div class="researcher"><div class="r-name">Dr. Frank J. Gonzalez</div><div class="r-title">Distinguished Investigator; Chief, Laboratory of Metabolism, NCI/NIH</div><div class="r-inst">Bethesda, MD, USA</div></div>
+  <div class="researcher"><div class="r-name">Prof. Jorge Gracia-Sancho</div><div class="r-title">ICREA Research Professor; Group Leader, IDIBAPS / University of Bern</div><div class="r-inst">Barcelona, Spain / Bern, Switzerland</div></div>
+  <div class="researcher"><div class="r-name">Prof. Meritxell Huch</div><div class="r-title">Director, Max Planck Institute of Cell Biology and Genetics; Professor, TU Dresden</div><div class="r-inst">Dresden, Germany</div></div>
+  <div class="researcher"><div class="r-name">Dr. / Prof. Jiangshan Jiao / Chuanlong Zhu</div><div class="r-title">Associate Professor / Professor, Nanjing University of Chinese Medicine</div><div class="r-inst">Nanjing, China</div></div>
+  <div class="researcher"><div class="r-name">Prof. Nicholas LaRusso</div><div class="r-title">Distinguished Investigator; Professor of Medicine; Chair Emeritus, GI &amp; Hepatology, Mayo Clinic</div><div class="r-inst">Rochester, MN, USA</div></div>
+  <div class="researcher"><div class="r-name">Dr. Tetyana Masyuk</div><div class="r-title">Associate Professor of Biochemistry and Molecular Biology, Mayo Clinic</div><div class="r-inst">Rochester, MN, USA</div></div>
+  <div class="researcher"><div class="r-name">Dr. Vishal C. Patel</div><div class="r-title">Clinical Senior Lecturer, King's College London; Consultant Hepatologist, King's College Hospital</div><div class="r-inst">London, UK</div></div>
+  <div class="researcher"><div class="r-name">Dr. Fotios Sampaziotis</div><div class="r-title">Wellcome Trust Clinical Career Development Fellow; Group Leader, Cambridge Stem Cell Institute</div><div class="r-inst">Cambridge, UK</div></div>
+  <div class="researcher"><div class="r-name">Prof. Mario Strazzabosco</div><div class="r-title">Professor of Medicine; Director, Yale Liver Center</div><div class="r-inst">New Haven, CT, USA</div></div>
+  <div class="researcher"><div class="r-name">Dr. Scott H. Waddell</div><div class="r-title">Postdoctoral Research Fellow, MRC Human Genetics Unit, University of Edinburgh</div><div class="r-inst">Edinburgh, UK</div><div class="r-note">Permission granted Sep 4, 2026 · Research focus: "understanding inflammation in fibrocystic liver disease"</div></div>
+
+  <div class="field-group">GENE THERAPY &amp; DELIVERY</div>
+  <div class="researcher"><div class="r-name">Dr. Sorin Fedeles</div><div class="r-title">Associate Research Scientist, Yale School of Medicine</div><div class="r-inst">New Haven, CT, USA</div></div>
+  <div class="researcher"><div class="r-name">Dr. Michael M. Kaminski</div><div class="r-title">Group Leader, Max Delbrück Center (MDC-BIMSB), Berlin</div><div class="r-inst">Berlin, Germany</div></div>
+  <div class="researcher"><div class="r-name">Dr. Matteus Krappitz</div><div class="r-title">Assistant Professor of Medicine, University of Colorado Anschutz Medical Campus</div><div class="r-inst">Aurora, CO, USA</div><div class="r-note">Replied Sep 2, 2026 — highly engaged; clinical data + gene therapy landscape requested</div></div>
+  <div class="researcher"><div class="r-name">Prof. Xiaogang Li</div><div class="r-title">Professor of Biochemistry and Molecular Biology; Director, PKD Research Center, Mayo Clinic</div><div class="r-inst">Rochester, MN, USA</div></div>
+  <div class="researcher"><div class="r-name">Dr. David Long</div><div class="r-title">Associate Professor, UCL Great Ormond Street Institute of Child Health</div><div class="r-inst">London, UK</div></div>
+  <div class="researcher"><div class="r-name">Dr. / Prof. Lauren Pritchard / Udayan Apte</div><div class="r-title">Associate Professor / Professor, Department of Pharmacology, University of Kansas Medical Center</div><div class="r-inst">Kansas City, KS, USA</div></div>
+  <div class="researcher"><div class="r-name">Prof. Holger Willenbring</div><div class="r-title">Professor of Surgery; Director, UCSF Liver Center</div><div class="r-inst">San Francisco, CA, USA</div><div class="r-note">Permission granted Sep 3, 2026 — approved statement on ARPKD gene therapy feasibility</div></div>
+  <div class="researcher"><div class="r-name">Dr. Ryan M. Williams</div><div class="r-title">Associate Professor of Biomedical Engineering and Medicine, Stony Brook University</div><div class="r-inst">Stony Brook, NY, USA</div><div class="r-note">Replied August 2026 — opted in</div></div>
+  <div class="researcher"><div class="r-name">Dr. Richard J. Ziegler</div><div class="r-title">Senior Vice President, Gene Therapy Research, Passage Bio</div><div class="r-inst">Philadelphia, PA, USA</div></div>
+
+  <div class="field-group">CLINICAL, IMAGING &amp; BIOMARKERS</div>
+  <div class="researcher"><div class="r-name">Dr. Akihiro Asai</div><div class="r-title">Assistant Professor of Pediatrics, Division of Gastroenterology, Hepatology and Nutrition, CCHMC</div><div class="r-inst">Cincinnati, OH, USA</div><div class="r-note">Replied — sees more ARPKD than PFIC at CCHMC (permission granted Sep 3, 2026)</div></div>
+  <div class="researcher"><div class="r-name">Prof. Liudmila Cebotaru</div><div class="r-title">Professor of Medicine and Physiology; Director, GI &amp; Hepatology Gene Therapy, Johns Hopkins</div><div class="r-inst">Baltimore, MD, USA</div><div class="r-note">Permission granted Sep 2, 2026 — Drug Discovery Q4 answered; 3 manuscripts provided</div></div>
+  <div class="researcher"><div class="r-name">Dr. Katherine M. Dell</div><div class="r-title">Professor of Pediatrics, Division of Nephrology and Hypertension, Cincinnati Children's / UC</div><div class="r-inst">Cincinnati, OH, USA</div></div>
+  <div class="researcher"><div class="r-name">Dr. Chris A. Flask</div><div class="r-title">Professor of Radiology, Cleveland Clinic / Case Western Reserve University</div><div class="r-inst">Cleveland, OH, USA</div></div>
+  <div class="researcher"><div class="r-name">Prof. Lisa M. Guay-Woodford</div><div class="r-title">Professor of Pediatrics; Director, Center for Translational Research, CHOP / Penn</div><div class="r-inst">Philadelphia, PA, USA</div></div>
+  <div class="researcher"><div class="r-name">Prof. Kenneth R. Hallows</div><div class="r-title">Professor of Medicine; Chief, Division of Nephrology, University of Vermont</div><div class="r-inst">Burlington, VT, USA</div><div class="r-note">Permission granted Sep 2, 2026 · BEAT-PKD trial active (<a href="https://clinicaltrials.gov/study/NCT07282821">NCT07282821</a>) · no significant data yet</div></div>
+  <div class="researcher"><div class="r-name">Dr. Erum A. Hartung</div><div class="r-title">Associate Professor of Pediatrics, CHOP / Penn; Principal Investigator, PKDNet</div><div class="r-inst">Philadelphia, PA, USA</div></div>
+  <div class="researcher"><div class="r-name">Prof. Max Liebau</div><div class="r-title">Professor of Pediatric Nephrology; Director, Pediatric Nephrology, Uniklinik RWTH Aachen</div><div class="r-inst">Aachen, Germany</div></div>
+  <div class="researcher"><div class="r-name">Dr. Matko Marlais</div><div class="r-title">Consultant Paediatric Nephrologist; Honorary Senior Lecturer, UCL Great Ormond Street</div><div class="r-inst">London, UK</div></div>
+  <div class="researcher"><div class="r-name">Dr. Kyle W. McCracken</div><div class="r-title">Assistant Professor of Pediatrics, Division of Developmental Biology, CCHMC</div><div class="r-inst">Cincinnati, OH, USA</div><div class="r-note">Replied Sep 2026 — PKHD1 iPSC line public via pkd-rrc.org</div></div>
+  <div class="researcher"><div class="r-name">Dr. Djalila Mekahli</div><div class="r-title">Associate Professor; Head of Pediatric Nephrology, UZ Leuven / KU Leuven</div><div class="r-inst">Leuven, Belgium</div></div>
+  <div class="researcher"><div class="r-name">Dr. Patricia Outeda</div><div class="r-title">Research Associate Professor, Division of Nephrology, University of Maryland</div><div class="r-inst">Baltimore, MD, USA</div><div class="r-note">Permission granted Sep 2, 2026 — ICD15 open gap in biliary cells confirmed</div></div>
+  <div class="researcher"><div class="r-name">Prof. Feng Qian</div><div class="r-title">Professor of Medicine; Director, PKD Research Program, University of Maryland</div><div class="r-inst">Baltimore, MD, USA</div><div class="r-note">Permission granted Sep 4, 2026 · ICD15 in biliary cells: confirmed unstudied gap · plans to extend to liver</div></div>
+  <div class="researcher"><div class="r-name">Prof. Paul J.D. Winyard</div><div class="r-title">Professor of Developmental Medicine, UCL GOS Institute of Child Health</div><div class="r-inst">London, UK</div></div>
+
+  <div class="field-group">ORGANOIDS &amp; MODELING</div>
+  <div class="researcher"><div class="r-name">Dr. Benjamin Freedman</div><div class="r-title">Associate Professor of Medicine, Division of Nephrology, University of Miami</div><div class="r-inst">Miami, FL, USA</div></div>
+  <div class="researcher"><div class="r-name">Dr. Ryuji Morizane</div><div class="r-title">Associate Professor of Medicine, Harvard Medical School; Director, Kidney Disease Modeling, MGH</div><div class="r-inst">Boston, MA, USA</div><div class="r-note">Permission granted Sep 3, 2026 · ARPKD organoid-on-chip · RAC1/SPTAN1 confirmed · letter of support welcomed</div></div>
+  <div class="researcher"><div class="r-name">Dr. Gary Peltz</div><div class="r-title">Professor of Anesthesiology, Perioperative and Pain Medicine, Stanford University</div><div class="r-inst">Stanford, CA, USA</div></div>
+  <div class="researcher"><div class="r-name">Prof. Toshiro Takebe</div><div class="r-title">Professor; Director, Center for Stem Cell and Organoid Medicine (CuSTOM), CCHMC / UC</div><div class="r-inst">Cincinnati, OH, USA</div></div>
+  <div class="researcher"><div class="r-name">Prof. Ludovic Vallier</div><div class="r-title">Professor; Head, Stem Cells and Metabolism Research Group, Berlin Institute of Health at Charité</div><div class="r-inst">Berlin, Germany</div></div>
+
+  <div class="field-group">GENETICS &amp; VARIANT ANALYSIS</div>
+  <div class="researcher"><div class="r-name">Dr. Christian Hanna</div><div class="r-title">Assistant Professor of Pediatrics; Director, Pediatric Cystic Kidney Disease Clinic, Mayo Clinic Children's Center</div><div class="r-inst">Rochester, MN, USA</div><div class="r-note">Replied Sep 2, 2026 — genotype-phenotype paper under review (permission granted Sep 2, 2026)</div></div>
+  <div class="researcher"><div class="r-name">Prof. Peter C. Harris</div><div class="r-title">Professor of Biochemistry and Molecular Biology; Vice Chair for Research, Division of Nephrology, Mayo Clinic</div><div class="r-inst">Rochester, MN, USA</div><div class="r-note">Replied Sep 2026 — research evaluation of Met3642Ile provided</div></div>
+
+</div><!-- end container -->
+
+<footer>
+  <div>ARPKD Research Network · Issue 2 · September 4, 2026</div>
+  <div style="margin-top:8px;">Nathan and Flora Johnson · <a href="mailto:nathaniel_johnson@yahoo.com">nathaniel_johnson@yahoo.com</a></div>
+  <div style="margin-top:8px;"><a href="https://johnson7707.github.io/arpkd-research">View Research Document →</a></div>
+  <div style="margin-top:16px;font-size:11px;color:#6a8aaa;">To unsubscribe, reply to nathaniel_johnson@yahoo.com. All personal communications included with explicit permission.</div>
+</footer>
+
+</body>
+</html>
