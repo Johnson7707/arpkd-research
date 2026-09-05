@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARPKD Research Network — Newsletter Archive</title>
+<style>
+  :root {
+    --navy: #0d3b6e;
+    --blue: #1a5c96;
+    --green: #1B5E20;
+    --lightgreen: #E8F5E9;
+    --grey: #555;
+    --lightgrey: #f4f6f9;
+    --border: #d0dae8;
+    --text: #1a1a2e;
+    --amber: #b45309;
+    --lightamber: #fffbeb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', serif; color: var(--text); background: #fff; line-height: 1.7; font-size: 16px; }
+  nav { background: var(--navy); padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+  nav .nav-title { color: #fff; font-size: 13px; letter-spacing: 0.05em; font-family: 'Arial', sans-serif; }
+  nav a { color: #a8c4e0; text-decoration: none; font-size: 13px; font-family: 'Arial', sans-serif; padding: 6px 14px; border: 1px solid #a8c4e0; border-radius: 3px; transition: all 0.2s; }
+  nav a:hover { background: #a8c4e0; color: var(--navy); }
+  header { background: linear-gradient(135deg, var(--navy) 0%, #1a4a7a 100%); color: #fff; padding: 60px 40px 50px; text-align: center; }
+  header .section-label { font-family: 'Arial', sans-serif; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #a8c4e0; margin-bottom: 14px; }
+  header h1 { font-size: 32px; font-weight: normal; letter-spacing: 0.02em; margin-bottom: 10px; }
+  header .subtitle { font-family: 'Arial', sans-serif; font-size: 14px; color: #a8c4e0; margin-bottom: 30px; }
+  header .stats { display: flex; justify-content: center; gap: 48px; margin-top: 30px; }
+  header .stat .num { font-size: 28px; font-weight: bold; color: #fff; }
+  header .stat .label { font-family: 'Arial', sans-serif; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #a8c4e0; margin-top: 4px; }
+  .container { max-width: 860px; margin: 0 auto; padding: 0 40px 60px; }
+  h2 { font-size: 20px; color: var(--navy); border-bottom: 2px solid var(--border); padding-bottom: 10px; margin: 48px 0 24px; font-weight: normal; letter-spacing: 0.02em; }
+  .issue-card { border: 1px solid var(--border); border-radius: 6px; padding: 28px 32px; margin-bottom: 20px; transition: box-shadow 0.2s, border-color 0.2s; }
+  .issue-card:hover { box-shadow: 0 4px 16px rgba(13,59,110,0.10); border-color: var(--blue); }
+  .issue-card.latest { border-left: 4px solid var(--blue); }
+  .issue-card.in-progress { border-left: 4px solid #d97706; background: var(--lightamber); }
+  .issue-meta { font-family: 'Arial', sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); margin-bottom: 8px; }
+  .issue-badge { display: inline-block; font-family: 'Arial', sans-serif; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; margin-left: 8px; vertical-align: middle; }
+  .badge-latest { background: var(--lightgreen); color: var(--green); }
+  .badge-wip { background: #fef3c7; color: #92400e; }
+  .badge-sent { background: #e0e7ef; color: var(--navy); }
+  .issue-title { font-size: 19px; color: var(--navy); margin-bottom: 10px; font-weight: normal; line-height: 1.4; }
+  .issue-desc { font-size: 14px; color: var(--grey); line-height: 1.6; margin-bottom: 16px; font-family: 'Arial', sans-serif; }
+  .issue-findings { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 18px; }
+  .issue-stat { font-family: 'Arial', sans-serif; font-size: 12px; color: var(--grey); }
+  .issue-stat strong { color: var(--navy); font-size: 15px; display: block; }
+  .issue-link { display: inline-block; background: var(--navy); color: #fff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 13px; padding: 8px 20px; border-radius: 3px; transition: background 0.2s; }
+  .issue-link:hover { background: var(--blue); }
+  .issue-link.secondary { background: transparent; color: var(--navy); border: 1px solid var(--border); margin-left: 10px; }
+  .issue-link.secondary:hover { border-color: var(--blue); color: var(--blue); }
+  .about-box { background: var(--lightgrey); border-left: 4px solid var(--blue); padding: 24px 28px; margin: 36px 0; font-size: 15px; line-height: 1.7; }
+  .about-box p + p { margin-top: 12px; }
+  .about-box a { color: var(--blue); }
+  .subscribe-box { border: 1px solid var(--border); border-radius: 6px; padding: 28px 32px; text-align: center; margin: 36px 0; background: var(--lightgrey); }
+  .subscribe-box h3 { font-size: 18px; color: var(--navy); font-weight: normal; margin-bottom: 10px; }
+  .subscribe-box p { font-family: 'Arial', sans-serif; font-size: 14px; color: var(--grey); margin-bottom: 16px; }
+  .subscribe-box a { display: inline-block; background: var(--blue); color: #fff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 13px; padding: 10px 24px; border-radius: 3px; }
+  footer { background: var(--navy); color: #a8c4e0; text-align: center; padding: 36px 40px; margin-top: 60px; font-family: 'Arial', sans-serif; font-size: 12px; line-height: 1.8; }
+  footer a { color: #a8c4e0; }
+  @media (max-width: 600px) {
+    header { padding: 40px 20px; } header h1 { font-size: 24px; }
+    .container { padding: 0 16px 40px; } nav { padding: 10px 16px; flex-direction: column; gap: 8px; }
+    header .stats { gap: 24px; } .issue-card { padding: 20px; } .issue-findings { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-title">ARPKD Research Network</span>
+  <a href="https://johnson7707.github.io/arpkd-research">View Research Document →</a>
+</nav>
+
+<header>
+  <div class="section-label">Newsletter Archive</div>
+  <h1>ARPKD Research Network</h1>
+  <div class="subtitle">Nathan &amp; Flora Johnson &nbsp;·&nbsp; Monthly Research Updates &nbsp;·&nbsp; nathaniel_johnson@yahoo.com</div>
+  <div class="stats">
+    <div class="stat"><div class="num">45</div><div class="label">Investigators</div></div>
+    <div class="stat"><div class="num">12</div><div class="label">Countries</div></div>
+    <div class="stat"><div class="num">2</div><div class="label">Issues</div></div>
+    <div class="stat"><div class="num">2026</div><div class="label">Founded</div></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="about-box">
+    <p>This newsletter documents our systematic research effort into ARPKD with congenital hepatic fibrosis (CHF). We track the global research landscape, identify therapeutic candidates, map cross-connections between findings, and maintain a network of 45 investigators across 12 countries working on biliary disease, gene therapy, liver organoids, and PKD biology.</p>
+    <p>All issues are freely available below. To receive future issues by email, contact <a href="mailto:nathaniel_johnson@yahoo.com">nathaniel_johnson@yahoo.com</a>.</p>
+  </div>
+
+  <h2>📬 All Issues</h2>
+
+  <!-- ISSUE 3 — IN PROGRESS -->
+  <div class="issue-card in-progress">
+    <div class="issue-meta">October 2026 · Issue 3 <span class="issue-badge badge-wip">In Progress — Sends Oct 1</span></div>
+    <div class="issue-title">Gene Therapy Reaches Human Liver · Biliary Fibrosis Mechanism Genetically Proven · FDA Approves First Pediatric Ultra-Rare Liver Gene Therapy</div>
+    <div class="issue-desc">The world's first in vivo liver base editing Phase 1 trial demonstrates 74% sustained gene correction at 24 weeks with no serious adverse events — direct proof-of-concept for PKHD1 base editing in humans. A landmark Nature Metabolism paper genetically proves p38γ/δ is the obligate cholangiocyte fibrosis mediator via knockout in 1,003 patients across 4 cohorts, powerfully confirming our framework's p38δ cascade node. FDA grants accelerated approval for the first pediatric ultra-rare liver gene therapy using a surrogate endpoint — the regulatory template ARPKD-CHF programs need.</div>
+    <div class="issue-findings">
+      <div class="issue-stat"><strong>8</strong>Key Findings</div>
+      <div class="issue-stat"><strong>6</strong>Also Noted</div>
+      <div class="issue-stat"><strong>7</strong>Cross-Connections</div>
+      <div class="issue-stat"><strong>45</strong>Investigators</div>
+      <div class="issue-stat"><strong>Oct 1, 2026</strong>Send Date</div>
+    </div>
+    <a href="October2026.html" class="issue-link">Preview In-Progress Issue →</a>
+  </div>
+
+  <!-- ISSUE 2 — SENT -->
+  <div class="issue-card latest">
+    <div class="issue-meta">September 2026 · Issue 2 <span class="issue-badge badge-latest">Most Recent Sent</span></div>
+    <div class="issue-title">SPTAN1/RAC1 Confirmed in Human ARPKD · SPP1 Fifth Independent Confirmation · Primary Biliary Basement Membrane Defect Identified</div>
+    <div class="issue-desc">Morizane's lab confirms SPTAN1/RAC1 in human ARPKD kidney organoids. SPP1 receives its fifth independent confirmation as a biliary fibrosis mediator. Waddell and Boulter (Edinburgh) identify the primary ECM defect in ARPKD biliary disease — laminin and collagen IV loss from the basement membrane preceding fibrosis. Twelve key findings featured from 57 total logged since Issue 1. Sent to 43 investigators across 12 countries on September 4, 2026.</div>
+    <div class="issue-findings">
+      <div class="issue-stat"><strong>57</strong>Findings Logged</div>
+      <div class="issue-stat"><strong>12</strong>Featured</div>
+      <div class="issue-stat"><strong>43</strong>Investigators</div>
+      <div class="issue-stat"><strong>Sep 4, 2026</strong>Sent</div>
+    </div>
+    <a href="September2026.html" class="issue-link">Read Issue 2 →</a>
+  </div>
+
+
+
+  <div class="subscribe-box">
+    <h3>Receive Future Issues</h3>
+    <p>Each issue is sent monthly to investigators, clinicians, and families working on or affected by ARPKD. All backgrounds welcome.</p>
+    <a href="mailto:nathaniel_johnson@yahoo.com?subject=Subscribe to ARPKD Research Newsletter">Request to Subscribe →</a>
+  </div>
+
+  <h2>About This Project</h2>
+  <div class="about-box">
+    <p>We are Nathan and Flora Johnson, parents of a child with ARPKD and congenital hepatic fibrosis (CHF) caused by two PKHD1 variants: c.9370C>T (p.His3124Tyr, confirmed pathogenic) and c.10926G>A (p.Met3642Ile, considered likely pathogenic by Mayo Clinic). Both are adenine base editing substrates.</p>
+    <p>This newsletter accompanies a systematic research document — currently over 230KB — that maps the molecular cascade from PKHD1 loss to biliary fibrosis, tracks gene therapy delivery options, and evaluates every current therapeutic candidate with ARPKD-CHF relevance. The full research document is freely available at the link in the navigation bar above.</p>
+    <p>All personal communications from researchers are included only with explicit written permission. All content is for research and educational purposes. This is not medical advice.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div>ARPKD Research Network · Newsletter Archive · johnson7707.github.io/arpkd-research/newsletter.html</div>
+  <div style="margin-top:8px;">Nathan and Flora Johnson · <a href="mailto:nathaniel_johnson@yahoo.com">nathaniel_johnson@yahoo.com</a></div>
+  <div style="margin-top:8px;">
+    <a href="https://johnson7707.github.io/arpkd-research">Research Document</a> &nbsp;·&nbsp;
+    <a href="September2026.html">Issue 2 (Sep 2026)</a> &nbsp;·&nbsp;
+    <a href="October2026.html">Issue 3 (Oct 2026, in progress)</a>
+  </div>
+  <div style="margin-top:16px;font-size:11px;color:#6a8aaa;">To unsubscribe from email updates, reply to nathaniel_johnson@yahoo.com. All personal communications included only with explicit written permission.</div>
+</footer>
+
+</body>
+</html>
