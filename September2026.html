@@ -235,6 +235,30 @@
     line-height: 1.7;
   }
 
+
+  /* SIDEBAR NAV */
+  #sidebar {
+    width: 220px;
+    background: var(--navy);
+    position: fixed;
+    top: 45px;
+    left: 0;
+    height: calc(100vh - 45px);
+    overflow-y: auto;
+    z-index: 100;
+    padding: 20px 14px;
+    box-sizing: border-box;
+  }
+  #sidebar .sb-title { font-family: 'Arial', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 14px; line-height: 1.4; }
+  #sidebar .sb-section { font-family: 'Arial', sans-serif; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.35); padding: 10px 0 4px; }
+  #sidebar a { display: block; color: rgba(255,255,255,.8); text-decoration: none; font-family: 'Arial', sans-serif; font-size: 13px; padding: 5px 0 5px 10px; border-left: 2px solid transparent; margin-left: -10px; transition: all .15s; line-height: 1.35; }
+  #sidebar a:hover, #sidebar a.active { color: #fff; border-left-color: #E87722; }
+  #sidebar .sb-sep { height: 1px; background: rgba(255,255,255,.12); margin: 10px 0; }
+  /* LAYOUT WITH SIDEBAR */
+  body { padding-left: 220px; }
+  .container { max-width: 820px; margin: 0 auto; padding: 0 32px; }
+  @media (max-width: 860px) { #sidebar { display: none; } body { padding-left: 0; } }
+
   @media (max-width: 600px) {
     header { padding: 40px 20px; }
     header h1 { font-size: 24px; }
@@ -244,14 +268,44 @@
     .funding-table { font-size: 11px; }
     .funding-table th, .funding-table td { padding: 7px 8px; }
   }
+
+  /* Scroll offset for sticky nav */
+  a[id], section[id], h2[id] {
+    scroll-margin-top: 52px;
+  }
 </style>
 </head>
 <body>
 
 <nav>
-  <span class="nav-title">ARPKD Research Network</span>
-  <a href="https://johnson7707.github.io/arpkd-research">View Research Document →</a>
+  <span class="nav-title">ARPKD Research Network · Issue 2 · September 2026</span>
+  <a href="https://johnson7707.github.io/arpkd-research">Research Document →</a>
 </nav>
+
+<div id="sidebar">
+  <div class="sb-title">September 2026<br>Issue 2</div>
+
+  <div class="sb-section">Framework</div>
+  <a href="#questions">Open Questions</a>
+
+  <div class="sb-sep"></div>
+  <div class="sb-section">Key Findings by Field</div>
+  <a href="#findings">📌 All Findings</a>
+  <a href="#f-molecular">🧬 Molecular Biology</a>
+  <a href="#f-genetherapy">🧪 Gene Therapy</a>
+  <a href="#f-therapeutics">💊 Therapeutics</a>
+  <a href="#f-clinical">🏥 Clinical &amp; Biomarkers</a>
+  <a href="#f-organoids">🔬 Organoids &amp; Models</a>
+
+  <div class="sb-sep"></div>
+  <div class="sb-section">Network</div>
+  <a href="#funding">Funding</a>
+  <a href="#crossconn">Cross-Connections</a>
+  <a href="#network">Researchers (43)</a>
+
+  <div class="sb-sep"></div>
+  <a href="https://johnson7707.github.io/arpkd-research/newsletter.html" style="background:rgba(255,255,255,.12);border-radius:3px;padding:6px 10px;margin-top:4px;font-size:12px;">📬 All Newsletters →</a>
+</div>
 
 <header>
   <div class="issue-label">September 2026 · Issue 2</div>
@@ -271,6 +325,7 @@
     Our names are Nathan and Flora Johnson. We are the parents of a child with ARPKD-CHF. Over the past fourteen months we have been conducting a systematic review of the literature across hepatology, biliary biology, gene therapy, organoid modeling, and genetics as they relate to this disease. What began as a family effort has grown into a network of 43 investigators across 12 countries, several of whom have already contributed answered questions, unpublished observations, and corrections that have meaningfully improved this work.
   </div>
 
+  <a id="questions"></a>
   <!-- SECTION 1 -->
   <div class="section-header">
     <div class="section-num">Section 1</div>
@@ -439,8 +494,111 @@
     </div>
   </div>
 
-  <hr>
 
+  <a id="findings"></a>
+  <!-- KEY FINDINGS -->
+  <div class="section-header">
+    <div class="section-num">New Since Issue 1</div>
+    <h2>Key Findings — August 10 to September 4, 2026</h2>
+  </div>
+  <p style="font-size:14px;color:var(--grey);margin-bottom:20px;">57 findings were logged between Issue 1 (August 10) and this issue. The 12 most significant for ARPKD-CHF are highlighted here. All are incorporated in full in the research document at <a href="https://johnson7707.github.io/arpkd-research">johnson7707.github.io/arpkd-research</a>.</p>
+
+  <a id="f-molecular"></a>
+  <h2 style="position:absolute;visibility:hidden;height:0;margin:0;padding:0;" aria-hidden="true">🧬 Molecular Biology &amp; Biliary Cascade</h2>
+  <div class="field-group">🧬 MOLECULAR BIOLOGY &amp; BILIARY CASCADE</div>
+
+  <div class="connection-card">
+    <h4>⭐ TIER 1 — SPP1 knockdown reduces biliary fibrosis in ARPKD mice in vivo</h4>
+    <p>Cholangiocyte-specific AAV8 Spp1 knockdown significantly attenuated hepatic fibrosis in Pkhd1Δ3-4/Δ3-4 mice — the first therapeutic proof-of-concept in the correct ARPKD disease model. Cascade confirmed end-to-end: PKHD1 deficiency → p-STAT3-dependent SPP1 overexpression → PI3K/Akt → HSC activation → Acta2/Col1a1 → fibrosis. PI3K/Akt is now a confirmed new cascade node.</p>
+    <div class="links"><a href="https://pubmed.ncbi.nlm.nih.gov/42265280/">PMID: 42265280 — Liebau/Ziegler group. Commun Biol 2026. DOI: 10.1038/s42003-026-10476-6</a></div>
+  </div>
+
+  <a id="f-genetherapy"></a>
+  <h2 style="position:absolute;visibility:hidden;height:0;margin:0;padding:0;" aria-hidden="true">🧪 Gene Therapy &amp; Base Editing</h2>
+  <div class="field-group">🧪 GENE THERAPY &amp; BASE EDITING</div>
+
+  <div class="connection-card">
+    <h4>⭐ ZSD base editing via AAV9 — third proof-of-concept for ABE in biallelic recessive pediatric liver disease</h4>
+    <p>ABE8e-V106W via AAV9 corrected PEX1-p.G843D achieving ~60% liver correction in neonatal and 4-week-old mice and human patient cells — eliminated toxic intermediates, rescued liver pathology. Zellweger spectrum disorder is structurally parallel to ARPKD: biallelic recessive, liver primary organ, single-letter missense correctable by ABE. His3124Tyr (c.9370C>T) is a confirmed ABE substrate. NEJM commentary by Ahrens-Nicklas (CHOP) — gated contact via HRFD enrollment.</p>
+    <div class="links"><a href="https://doi.org/10.1038/s41551-026-01651-5">Liu DR, Lutz C et al. Nat Biomed Eng 2026. DOI: 10.1038/s41551-026-01651-5</a> · <a href="https://doi.org/10.1056/NEJMcibr2606991">Ahrens-Nicklas RC. NEJM 395(7):711, 2026. DOI: 10.1056/NEJMcibr2606991</a></div>
+  </div>
+
+  <div class="connection-card">
+    <h4>⭐ Norucholic acid (NCA) Phase 3 NUC-5 — first drug to show disease-modifying activity in any biliary cholestatic disease</h4>
+    <p>NCA met Phase 3 primary endpoint in PSC (OR 4.16 vs placebo for ALP normalization + no histologic worsening; ~25% liver scarring reversal). Mechanism: cholehepatic shunting, bicarbonate-rich choleresis, T-cell immune modulation. PSC and ARPKD-CHF share the same biliary fibrosis endpoint structure. This is the most important PSC drug result of 2025-2026 for ARPKD-CHF extrapolation.</p>
+    <div class="links"><a href="https://doi.org/10.1016/S0140-6736(25)00847-3">Ponsioen CY et al. Lancet 2025. DOI: 10.1016/S0140-6736(25)00847-3</a></div>
+  </div>
+
+  <div class="connection-card">
+    <h4>⭐ Guay-Woodford FPC functional review — three new cascade connections</h4>
+    <p>FPC-NTD contains TMEM2 homology domains suggesting hyaluronidase-like activity → FPC deficiency amplifies HA accumulation (connects to MASP1-METTL3-HAS2 cascade). FPC-CTT/NDFIP2/NEDD4-family E3 ubiquitin ligase dysfunction → TGF-β↑ + RhoA↑ + ENaC retention → hypertension. FPC-CTT suppresses SRC → STAT3 (second STAT3 activation route). This is Guay-Woodford's paper — HRFD enrollment opens this contact.</p>
+    <div class="links"><a href="https://doi.org/10.1007/s00467-025-07129-x">Guay-Woodford LM, Gulati A, Caldovic L. Pediatric Nephrology 41:2785, 2026. DOI: 10.1007/s00467-025-07129-x</a></div>
+  </div>
+
+  <a id="f-therapeutics"></a>
+  <h2 style="position:absolute;visibility:hidden;height:0;margin:0;padding:0;" aria-hidden="true">💊 Therapeutics &amp; Drug Candidates</h2>
+  <div class="field-group">💊 THERAPEUTICS &amp; DRUG CANDIDATES</div>
+
+  <div class="connection-card">
+    <h4>Elafibranor ELMWOOD Phase 2 published + ELASCOPE Phase 3 launched</h4>
+    <p>ELMWOOD: elafibranor 120 mg reduced ALP by 171 U/L vs placebo +32 U/L (p&lt;0.0001) in 68 PSC patients; ELF stabilization; safe. ELASCOPE Phase 3 now enrolling (~350 PSC patients, ~200 global sites). Elafibranor is FDA-approved for PBC and now in Phase 3 for PSC — both adjacent biliary diseases. Shortest regulatory path for a biliary anti-fibrotic ARPKD-CHF study.</p>
+    <div class="links"><a href="https://doi.org/10.1016/j.jhep.2025.10.031">Färkkilä M et al. (ELMWOOD). J Hepatol 2026. DOI: 10.1016/j.jhep.2025.10.031</a></div>
+  </div>
+
+  <a id="f-clinical"></a>
+  <h2 style="position:absolute;visibility:hidden;height:0;margin:0;padding:0;" aria-hidden="true">🏥 Clinical &amp; Biomarkers</h2>
+  <div class="field-group">🏥 CLINICAL &amp; BIOMARKERS</div>
+
+  <div class="connection-card">
+    <h4>ELF score — new biopsy-controlled prognostic cut-offs</h4>
+    <p>ELF &lt;9.8 = 1% liver-related events; ELF 9.8–11.3 = 27.8%; ELF ≥11.3 = 72.7% at 5 years. AUC 0.939 — highest among FIB-4, LSM, and histological fibrosis staging. First biopsy-controlled real-world validation with event-rate data for each tier. ELF is commercially available, non-invasive, and now validated in PSC, PBC, and MASLD — all with impaired bile flow. Recommended as serial trial endpoint for ARPKD-CHF.</p>
+    <div class="links"><a href="https://doi.org/10.1016/j.jhep.2026.01.008">Boursier J et al. J Hepatol 2026. DOI: 10.1016/j.jhep.2026.01.008</a></div>
+  </div>
+
+  <div class="connection-card">
+    <h4>Belapectin (galectin-3 inhibitor) NAVIGATE Phase 2b — significant reduction in new varices</h4>
+    <p>Statistically significant reduction in new varices in the per-protocol population; >50% reduction in Pro-C3; ELF score improvements; improved portal hypertension risk by Baveno VII criteria. Greatest benefit in ELF >11.3 subgroup (22.7% vs 42.9% new varices). FDA meeting Q2 2026 for next steps. ARPKD-CHF produces the exact endpoints measured: portal hypertension, varices, biliary fibrosis.</p>
+    <div class="links"><a href="https://doi.org/10.1016/j.jhep.2026.02.022">Chalasani N et al. (NAVIGATE). J Hepatol 2026. DOI: 10.1016/j.jhep.2026.02.022</a></div>
+  </div>
+
+  <div class="connection-card" style="border-left:3px solid var(--blue);">
+    <h4>PKHD1 LoF burden determines renal severity — hepatic disease is genotype-INDEPENDENT</h4>
+    <p>In 142 ARPKD patients, renal severity correlates with PKHD1 loss-of-function allele burden — but hepatic disease severity does not. Hepatic fibrosis progression is driven by post-natal cascade activity (SPP1, YAP, ECM), not genotype. This is clinical validation of the framework's core premise: the postnatal FXR-YAP-SPP1 cascade determines CHF severity, making it therapeutically modifiable regardless of genotype.</p>
+    <div class="links"><a href="https://doi.org/10.1016/j.ekir.2026.03.011">Nevado J et al. Kidney Int Rep 2026. DOI: 10.1016/j.ekir.2026.03.011</a></div>
+  </div>
+
+  <div class="connection-card">
+    <h4>Portal fibroblasts — primary fibrosis-producing cells in biliary liver injury (framework correction)</h4>
+    <p>In cholestatic/biliary fibrosis, portal fibroblasts (not hepatic stellate cells) are the dominant myofibroblast source. SPP1 activates portal fibroblasts via the same PI3K/Akt mechanism now confirmed in ARPKD mice. The cascade framework has been updated to reflect this distinction — therapeutic targeting of portal fibroblasts is more specific for ARPKD-CHF than HSC-targeted approaches.</p>
+    <div class="links"><a href="https://doi.org/10.1053/j.gastro.2025.11.014">Lua I et al. Gastroenterology 2026. DOI: 10.1053/j.gastro.2025.11.014</a></div>
+  </div>
+
+  <div class="connection-card">
+    <h4>PCK rat liver transcriptomics — first ARPKD-CHF-specific RNA-seq (Pritchard/Apte labs, KUMC)</h4>
+    <p>Comprehensive RNA-seq of PCK rat liver confirmed: SPP1, STAT3, CTGF, PDGFB upregulated; HNF4α, SMAD7 downregulated; CELSR1 (PCP pathway) elevated. Therapeutic window identified at PND20-30 — equivalent to early postnatal period in humans. This is Pritchard and Apte's work (both in our network, KUMC).</p>
+    <div class="links"><a href="https://doi.org/10.1038/s41598-026-43852-7">Pritchard MT, Apte U et al. Sci Rep 2026. DOI: 10.1038/s41598-026-43852-7</a></div>
+  </div>
+
+  <a id="f-organoids"></a>
+  <h2 style="position:absolute;visibility:hidden;height:0;margin:0;padding:0;" aria-hidden="true">🔬 Organoids &amp; Disease Models</h2>
+  <div class="field-group">🔬 ORGANOIDS &amp; DISEASE MODELS</div>
+
+  <div class="connection-card">
+    <h4>Human periportal liver assembloid — top ARPKD-CHF modeling platform candidate (Huch lab, MPI-CBG)</h4>
+    <p>Assembloid combining hepatocytes, cholangiocytes, and portal fibroblasts models biliary fibrosis at the periportal niche — the exact disease site in ARPKD-CHF. Mouse assembloid confirmed CXCL12 cascade node and identified CDH11/ITGβ1 as new anti-fibrotic targets. Prof. Huch is in our network (Dresden). This is the most relevant new organoid platform for ARPKD-CHF modeling published in 2025-2026.</p>
+    <div class="links"><a href="https://doi.org/10.1038/s41586-025-08623-0">Huch M et al. Nature 2025. DOI: 10.1038/s41586-025-08623-0</a></div>
+  </div>
+
+  <div class="connection-card">
+    <h4>Ferroptosis — new mechanism in congenital cholestatic liver disease connecting YAP to bile acid toxicity</h4>
+    <p>In congenital cholestatic pediatric liver disease: bile acid accumulation → GPX4 depletion → ferroptosis in cholangiocytes. YAP directly promotes cholestatic ferroptosis (YAPflox/flox × FBXL5flox/flox model). In ARPKD-CHF: constitutive YAP activation (root node) + bile acid accumulation = ferroptosis conditions. Completely absent from prior framework. Spermidine → Nrf2 → GPX4 upregulation is anti-ferroptotic — third mechanism for spermidine in ARPKD-CHF.</p>
+    <div class="links"><a href="https://doi.org/10.1016/j.ajpath.2025.11.008">Ohta Y et al. Am J Pathol 196(3):700-715, 2026. DOI: 10.1016/j.ajpath.2025.11.008</a></div>
+  </div>
+
+  <p style="font-size:13px;color:var(--grey);margin-top:20px;font-style:italic;">45 additional findings from this period are incorporated in the full research document. All findings include complete citations and tier labels. <a href="https://johnson7707.github.io/arpkd-research">View the full research document →</a></p>
+
+  <hr>
+  <a id="collab"></a>
   <!-- SECTION 2 -->
   <div class="section-header">
     <div class="section-num">Section 2</div>
@@ -451,6 +609,7 @@
 
   <hr>
 
+  <a id="funding"></a>
   <!-- SECTION 3 -->
   <div class="section-header">
     <div class="section-num">Section 3</div>
@@ -472,6 +631,7 @@
 
   <hr>
 
+  <a id="crossconn"></a>
   <!-- SECTION 4 -->
   <div class="section-header">
     <div class="section-num">Section 4</div>
@@ -505,6 +665,7 @@
 
   <hr>
 
+  <a id="network"></a>
   <!-- SECTION 5 -->
   <div class="section-header">
     <div class="section-num">Section 5</div>
@@ -537,7 +698,7 @@
   <div class="researcher"><div class="r-name">Dr. Matteus Krappitz</div><div class="r-title">Assistant Professor of Medicine, University of Colorado Anschutz Medical Campus</div><div class="r-inst">Aurora, CO, USA</div><div class="r-note">Replied Sep 2, 2026 — highly engaged; clinical data + gene therapy landscape requested</div></div>
   <div class="researcher"><div class="r-name">Prof. Xiaogang Li</div><div class="r-title">Professor of Biochemistry and Molecular Biology; Director, PKD Research Center, Mayo Clinic</div><div class="r-inst">Rochester, MN, USA</div></div>
   <div class="researcher"><div class="r-name">Dr. David Long</div><div class="r-title">Associate Professor, UCL Great Ormond Street Institute of Child Health</div><div class="r-inst">London, UK</div></div>
-  <div class="researcher"><div class="r-name">Dr. / Prof. Lauren Pritchard / Udayan Apte</div><div class="r-title">Associate Professor / Professor, Department of Pharmacology, University of Kansas Medical Center</div><div class="r-inst">Kansas City, KS, USA</div></div>
+  <div class="researcher"><div class="r-name">Dr. / Prof. Michele T. Pritchard / Udayan Apte</div><div class="r-title">Associate Professor / Professor, Department of Pharmacology, University of Kansas Medical Center</div><div class="r-inst">Kansas City, KS, USA</div></div>
   <div class="researcher"><div class="r-name">Prof. Holger Willenbring</div><div class="r-title">Professor of Surgery; Director, UCSF Liver Center</div><div class="r-inst">San Francisco, CA, USA</div><div class="r-note">Permission granted Sep 3, 2026 — approved statement on ARPKD gene therapy feasibility</div></div>
   <div class="researcher"><div class="r-name">Dr. Ryan M. Williams</div><div class="r-title">Associate Professor of Biomedical Engineering and Medicine, Stony Brook University</div><div class="r-inst">Stony Brook, NY, USA</div><div class="r-note">Replied August 2026 — opted in</div></div>
   <div class="researcher"><div class="r-name">Dr. Richard J. Ziegler</div><div class="r-title">Senior Vice President, Gene Therapy Research, Passage Bio</div><div class="r-inst">Philadelphia, PA, USA</div></div>
@@ -545,7 +706,7 @@
   <div class="field-group">CLINICAL, IMAGING &amp; BIOMARKERS</div>
   <div class="researcher"><div class="r-name">Dr. Akihiro Asai</div><div class="r-title">Assistant Professor of Pediatrics, Division of Gastroenterology, Hepatology and Nutrition, CCHMC</div><div class="r-inst">Cincinnati, OH, USA</div><div class="r-note">Replied — sees more ARPKD than PFIC at CCHMC (permission granted Sep 3, 2026)</div></div>
   <div class="researcher"><div class="r-name">Prof. Liudmila Cebotaru</div><div class="r-title">Professor of Medicine and Physiology; Director, GI &amp; Hepatology Gene Therapy, Johns Hopkins</div><div class="r-inst">Baltimore, MD, USA</div><div class="r-note">Permission granted Sep 2, 2026 — Drug Discovery Q4 answered; 3 manuscripts provided</div></div>
-  <div class="researcher"><div class="r-name">Dr. Katherine M. Dell</div><div class="r-title">Professor of Pediatrics, Division of Nephrology and Hypertension, Cincinnati Children's / UC</div><div class="r-inst">Cincinnati, OH, USA</div></div>
+  <div class="researcher"><div class="r-name">Dr. Katherine M. Dell</div><div class="r-title">Director of Clinical and Translational Research, Cleveland Clinic Children's</div><div class="r-inst">Cleveland, OH, USA</div></div>
   <div class="researcher"><div class="r-name">Dr. Chris A. Flask</div><div class="r-title">Professor of Radiology, Cleveland Clinic / Case Western Reserve University</div><div class="r-inst">Cleveland, OH, USA</div></div>
   <div class="researcher"><div class="r-name">Prof. Lisa M. Guay-Woodford</div><div class="r-title">Professor of Pediatrics; Director, Center for Translational Research, CHOP / Penn</div><div class="r-inst">Philadelphia, PA, USA</div></div>
   <div class="researcher"><div class="r-name">Prof. Kenneth R. Hallows</div><div class="r-title">Professor of Medicine; Chief, Division of Nephrology, University of Vermont</div><div class="r-inst">Burlington, VT, USA</div><div class="r-note">Permission granted Sep 2, 2026 · BEAT-PKD trial active (<a href="https://clinicaltrials.gov/study/NCT07282821">NCT07282821</a>) · no significant data yet</div></div>
@@ -562,7 +723,7 @@
   <div class="researcher"><div class="r-name">Dr. Benjamin Freedman</div><div class="r-title">Associate Professor of Medicine, Division of Nephrology, University of Miami</div><div class="r-inst">Miami, FL, USA</div></div>
   <div class="researcher"><div class="r-name">Dr. Ryuji Morizane</div><div class="r-title">Associate Professor of Medicine, Harvard Medical School; Director, Kidney Disease Modeling, MGH</div><div class="r-inst">Boston, MA, USA</div><div class="r-note">Permission granted Sep 3, 2026 · ARPKD organoid-on-chip · RAC1/SPTAN1 confirmed · letter of support welcomed</div></div>
   <div class="researcher"><div class="r-name">Dr. Gary Peltz</div><div class="r-title">Professor of Anesthesiology, Perioperative and Pain Medicine, Stanford University</div><div class="r-inst">Stanford, CA, USA</div></div>
-  <div class="researcher"><div class="r-name">Prof. Toshiro Takebe</div><div class="r-title">Professor; Director, Center for Stem Cell and Organoid Medicine (CuSTOM), CCHMC / UC</div><div class="r-inst">Cincinnati, OH, USA</div></div>
+  <div class="researcher"><div class="r-name">Prof. Takanori Takebe</div><div class="r-title">Professor; Director, Center for Stem Cell and Organoid Medicine (CuSTOM), CCHMC / UC</div><div class="r-inst">Cincinnati, OH, USA</div></div>
   <div class="researcher"><div class="r-name">Prof. Ludovic Vallier</div><div class="r-title">Professor; Head, Stem Cells and Metabolism Research Group, Berlin Institute of Health at Charité</div><div class="r-inst">Berlin, Germany</div></div>
 
   <div class="field-group">GENETICS &amp; VARIANT ANALYSIS</div>
@@ -577,6 +738,36 @@
   <div style="margin-top:8px;"><a href="https://johnson7707.github.io/arpkd-research">View Research Document →</a></div>
   <div style="margin-top:16px;font-size:11px;color:#6a8aaa;">To unsubscribe, reply to nathaniel_johnson@yahoo.com. All personal communications included with explicit permission.</div>
 </footer>
+
+
+<script>
+  const sideLinks = document.querySelectorAll('#sidebar a[href^="#"]');
+  const anchors = Array.from(document.querySelectorAll('a[id], section[id]'));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        sideLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + id) link.classList.add('active');
+        });
+      }
+    });
+  }, { rootMargin: '-10% 0px -75% 0px' });
+  anchors.forEach(a => observer.observe(a));
+  sideLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.getElementById(href.slice(1));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        sideLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
