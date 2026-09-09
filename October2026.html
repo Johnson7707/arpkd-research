@@ -313,7 +313,7 @@
 
 <div class="container">
 
-  <div class="last-updated">Last updated: September 8, 2026 · 9 findings + 6 noted · Research session complete</div>
+  <div class="last-updated">Last updated: September 9, 2026 · 12 findings + 6 noted · Research session complete</div>
 
   <div class="intro-box">
     Our names are Nathan and Flora Johnson. We are the parents of a child with ARPKD-CHF. This newsletter tracks research developments across hepatology, biliary biology, gene therapy, organoid modeling, and genetics. It is sent to 43 investigators across 12 countries on the first of each month. This page is a live preview of Issue 3 — updated throughout September as new findings are logged.
@@ -526,9 +526,35 @@
     <p style="font-size:14px;color:#444;line-height:1.6;"><strong>Engineered virus-like particles (eVLPs) deliver adenine base editing to patient CFTR organoids — a third delivery modality beyond AAV and LNP.</strong> Two 2025 papers confirm eVLP delivery of ABE8e in patient-derived organoids: (1) Nicosia L, Harrison PT et al. corrected CFTR G542X → G542R in intestinal organoids with 2% editing efficiency and 6.4% chloride transport restoration using BE-eVLPs (<a href="https://doi.org/10.1016/j.isci.2025.111979">iScience 28:111979, 2025. DOI: 10.1016/j.isci.2025.111979</a>). (2) Rose I, Baines DL et al. corrected G542X in airway epithelial cells via receptor-targeted nanoparticles with 17-52% editing efficiency (<a href="https://doi.org/10.1007/s00018-025-05587-y">Cell Mol Life Sci 82:144, 2025. DOI: 10.1007/s00018-025-05587-y</a>). <strong>ARPKD-CHF note:</strong> eVLPs are an alternative delivery system developed by David Liu's lab (Broad Institute) — no pre-existing immunity issue (unlike AAV), no cargo size limit concern, and transient protein delivery reduces off-target risk. For PKHD1 ABE correction of His3124Tyr, eVLPs could bypass the AAV immune response barrier while maintaining the precision of base editing. The JHU Hub spring 2026 feature "DNA gets a copyeditor" (hub.jhu.edu) appears to profile base editing research at Hopkins, likely Cebotaru's lab — consistent with these developments.</p>
   </div>
 
+  <div class="finding-card">
+    <h4>⭐⭐ SPTAN1→RAC1→c-FOS: a third parallel kidney cystogenic pathway — and epigenetic rescue restores ARPKD organoids without correcting PKHD1 (February 26, 2026)</h4>
+    <p><strong>Source:</strong> Kuraoka S, Higashi Y, Saito S, Pourgonabadi S, Honjoh H, Ishigaki S, Harris PC, Satlin LM, Yamashita M, Morizane R. "Deciphering the Impact of RAC1-SPTAN1 in ARPKD Cystogenesis Using Multifaceted Models." <em>Advanced Science</em> 13(25):e2524001, 2026. Open Access. DOI: 10.1002/advs.202524001. From the Morizane Lab (MGH/Harvard), with co-authors from Mayo Clinic and Mount Sinai. <strong>Tier 1 — five independent evidence streams: organoid-on-chip, transgenic mice, human ARPKD kidney specimens, scRNA-seq, and CRISPRa rescue.</strong></p>
+    <p><strong>What they found:</strong> The cytoskeletal protein SPTAN1 (αII-spectrin) is reduced in PKHD1-deficient kidney cells. This loss disrupts the sodium-calcium exchanger SLC8A1, raises intracellular calcium, and activates RAC1 — a small GTPase that then drives c-FOS transcription and cyst expansion in the distal/connecting tubule. The study definitively answers where ARPKD kidney cysts come from: <strong>SLC8A1+ distal/connecting tubule cells, not collecting duct cells</strong> — confirmed by scRNA-seq and human ARPKD patient tissue.<br><br>
+    The most striking result: <strong>CRISPR activation (CRISPRa) of SPTAN1 in PKHD1⁻/⁻ human organoids alleviated cystic phenotypes, normalized intracellular calcium, and reduced RAC1 and c-FOS</strong> — without ever correcting the PKHD1 mutation itself. This is epigenetic rescue: turning up the expression of a downstream gene using a gene activator system that doesn't cut DNA. Rescuing ARPKD organoids without touching PKHD1 is a conceptually important shift — it means patients with frameshifts or deletions that can't be base-edited might still have therapeutic options via downstream pathway correction.</p>
+    <p><strong>Three parallel cystogenic pathways now confirmed in ARPKD kidney:</strong> (1) V2R/vasopressin → cAMP [tolvaptan target]; (2) PTH1R → cAMP [untested]; (3) SPTAN1 → RAC1 → c-FOS [CRISPRa proof-of-concept]. Tolvaptan addresses only the first. The existence of two additional independent pathways partially explains why tolvaptan produces incomplete benefit and why a pediatric-specific approach is needed.</p>
+    <div class="links"><a href="https://doi.org/10.1002/advs.202524001">Kuraoka S, Harris PC, Satlin LM, Morizane R et al. <em>Advanced Science</em> 2026. DOI: 10.1002/advs.202524001</a> · Open Access · PMC13137809</div>
+  </div>
+
+  <div class="finding-card">
+    <h4>⭐ PTH1R — parathyroid hormone receptor identified as second cAMP-elevating target in ARPKD kidney, parallel to and independent of tolvaptan's mechanism (August 1, 2025)</h4>
+    <p><strong>Source:</strong> Afrin H, Robichaud JH, Qamar U, Harris PC, Gupta N. "Kidney organoids demonstrate that PTH1R drives a cystogenic cAMP-pPKA-pCREB axis in developmental polycystic kidney disease." <em>Am J Physiol Renal Physiol</em> 329(2):F257–F268, 2025. From the Mayo Clinic Division of Nephrology and Hypertension. PMID: 40602764. DOI: 10.1152/ajprenal.00056.2025. <strong>Tier 1 — human PKHD1⁻/⁻ iPSC organoids with isogenic controls + scRNA-seq + decedent human ARPKD tissue.</strong></p>
+    <p><strong>What they found:</strong> PTH1R (parathyroid hormone 1 receptor) — a receptor most people associate with calcium/bone metabolism — is also a stimulatory G-protein-coupled receptor that activates cAMP in ARPKD kidney tubule cells. Treating PKHD1⁻/⁻ organoids with PTH (the hormone that activates PTH1R) causes enhanced cyst expansion. The pathway runs: PTH1R → cAMP↑ → PKA phosphorylation → CREB phosphorylation → cystogenic gene transcription.<br><br>
+    <strong>Why this matters:</strong> Tolvaptan (the only approved ARPKD kidney drug, for adults) works by blocking vasopressin from activating another cAMP-elevating receptor (V2R). PTH1R is a completely separate receptor that elevates cAMP independently. A patient on tolvaptan suppresses the vasopressin/V2R route but leaves the PTH1R route untouched. No PTH1R antagonist has ever been tested in ARPKD. This is a newly identified, completely unaddressed drug target for kidney cyst progression.</p>
+    <div class="links"><a href="https://doi.org/10.1152/ajprenal.00056.2025">Afrin H, Harris PC, Gupta N et al. <em>Am J Physiol Renal Physiol</em> 329:F257-F268, 2025. PMID: 40602764</a></div>
+  </div>
+
+  <div class="finding-card">
+    <h4>⚠️ AAV gene therapy vectors cause kidney inflammation via NFκB in human organoids — a safety signal animal models miss (August 8, 2025)</h4>
+    <p><strong>Source:</strong> Gupta N, Zhang K, Sabbisetti V, Shu J, Morizane R. "AAV for gene therapy drives a nephrotoxic response via NFκB in kidney organoids." <em>Signal Transduction and Targeted Therapy</em> 10(1):252, 2025. From Massachusetts General Hospital / Harvard Medical School. PMID: 40774951. DOI: 10.1038/s41392-025-02336-2. Open Access. <strong>Context: this study was motivated by real patient deaths in AAV-based gene therapy trials for Duchenne muscular dystrophy — safety signals that were missed in preclinical animal studies.</strong></p>
+    <p><strong>What they found:</strong> When human stem cell-derived kidney organoids were exposed to AAV viral vectors — including empty vectors containing no therapeutic cargo — the AAV itself triggered NFκB-mediated inflammation and kidney cell toxicity. This happened regardless of what the AAV was carrying. Animal models in those same programs did not flag this toxicity, which contributed to unexpected deaths when the therapies reached clinical trials.<br><br>
+    Among AAV serotypes tested: AAV2 transduced kidney tubule cells most efficiently (~46%) but confirmed the NFκB nephrotoxicity. AAV8 and AAV9 showed negligible kidney tropism — meaning they reach the kidney less, which is actually an advantage for liver-targeted delivery (less kidney off-target exposure). <strong>This is why our research network prioritizes human kidney organoid safety testing as a mandatory step before any kidney-targeted ARPKD gene therapy program proceeds to the clinic.</strong></p>
+    <p><strong>For ARPKD families:</strong> This finding is not a reason to be alarmed about gene therapy — it is a reason to be reassured that the field is catching safety issues early using better tools. Human organoids see what mice don't. The research network around Gianna uses this exact organoid-based approach.</p>
+    <div class="links"><a href="https://doi.org/10.1038/s41392-025-02336-2">Gupta N, Morizane R et al. <em>Sig Transduct Target Ther</em> 10:252, 2025. Open Access. PMID: 40774951</a></div>
+  </div>
+
   <div class="placeholder">
     <div class="ph-label">More findings being added throughout September</div>
-    <div>Check back as the month progresses — 9 findings + 6 noted · Research complete for this session</div>
+    <div>Check back as the month progresses — 12 findings + 6 noted · Research complete for this session</div>
   </div>
 
   <p style="font-size:13px;color:var(--grey);margin-top:16px;font-style:italic;">All findings from this period will also be incorporated in the full research document. <a href="https://johnson7707.github.io/arpkd-research">View the full research document →</a></p>
@@ -779,7 +805,7 @@
   const today = new Date();
   const days = Math.max(0, Math.ceil((sendDate - today) / (1000 * 60 * 60 * 24)));
   document.getElementById('days-count').textContent = days;
-  document.getElementById('findings-count').textContent = '9';
+  document.getElementById('findings-count').textContent = '12';
 
   // Sidebar active state on scroll
   const sections = document.querySelectorAll('a[id]');
