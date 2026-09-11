@@ -2591,5 +2591,16 @@ secs.forEach(s=>{
 });
 </script>
 
+
+<!-- Cookie consent notice -->
+<div id="cookie-notice" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#ccc;font-family:Arial,sans-serif;font-size:13px;padding:12px 20px;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:20px;">
+  <span>This site uses Google Analytics to measure traffic. No personally identifiable information is collected. <a href="https://policies.google.com/privacy" target="_blank" style="color:#7eb8f7;">Learn more</a></span>
+  <button onclick="document.getElementById('cookie-notice').style.display='none';localStorage.setItem('cookieAccepted','1');" style="background:#1E7C4A;color:#fff;border:none;padding:6px 16px;border-radius:4px;cursor:pointer;font-size:13px;white-space:nowrap;">Got it</button>
+</div>
+<script>
+  if(!localStorage.getItem('cookieAccepted')){
+    document.getElementById('cookie-notice').style.display='flex';
+  }
+</script>
 </body>
 </html>
