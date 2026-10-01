@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DFRD9LSV4M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DFRD9LSV4M');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARPKD Research Network — November 2026 Issue 4</title>
+<style>
+  :root {
+    --navy: #0d3b6e;
+    --blue: #1a5c96;
+    --green: #1B5E20;
+    --lightgreen: #E8F5E9;
+    --grey: #555;
+    --lightgrey: #f4f6f9;
+    --border: #d0dae8;
+    --text: #1a1a2e;
+    --amber: #b45309;
+    --lightamber: #fffbeb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', serif;
+    color: var(--text);
+    background: #fff;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* TOP NAV */
+  nav {
+    background: var(--navy);
+    padding: 12px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
+  nav .nav-title { color: #fff; font-size: 13px; letter-spacing: 0.05em; font-family: 'Arial', sans-serif; }
+  nav a {
+    color: #a8c4e0;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: 'Arial', sans-serif;
+    padding: 6px 14px;
+    border: 1px solid #a8c4e0;
+    border-radius: 3px;
+    transition: all 0.2s;
+  }
+  nav a:hover { background: #a8c4e0; color: var(--navy); }
+
+  /* SIDEBAR NAV */
+  #sidebar {
+    width: 220px;
+    background: var(--navy);
+    position: fixed;
+    top: 45px;
+    left: 0;
+    height: calc(100vh - 45px);
+    overflow-y: auto;
+    z-index: 100;
+    padding: 20px 14px;
+    box-sizing: border-box;
+  }
+  #sidebar .sb-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.45);
+    margin-bottom: 14px;
+    line-height: 1.4;
+  }
+  #sidebar .sb-section {
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.35);
+    padding: 10px 0 4px;
+  }
+  #sidebar a {
+    display: block;
+    color: rgba(255,255,255,.8);
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    padding: 5px 0 5px 10px;
+    border-left: 2px solid transparent;
+    margin-left: -10px;
+    transition: all .15s;
+    line-height: 1.35;
+  }
+  #sidebar a:hover, #sidebar a.active {
+    color: #fff;
+    border-left-color: #E87722;
+  }
+  #sidebar .sb-sep { height: 1px; background: rgba(255,255,255,.12); margin: 10px 0; }
+
+  /* LAYOUT WITH SIDEBAR */
+  body { padding-left: 220px; }
+  .container { max-width: 820px; margin: 0 auto; padding: 0 32px; }
+
+  @media (max-width: 860px) {
+    #sidebar { display: none; }
+    body { padding-left: 0; }
+  }
+
+  /* WIP BANNER */
+  .wip-banner {
+    background: var(--lightamber);
+    border-bottom: 2px solid #d97706;
+    padding: 12px 40px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: var(--amber);
+  }
+  .wip-banner strong { color: #92400e; }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    color: white;
+    padding: 60px 40px 50px;
+    text-align: center;
+  }
+  header .issue-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: #a8c4e0;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+  header h1 { font-size: 32px; font-weight: normal; line-height: 1.3; max-width: 700px; margin: 0 auto 16px; }
+  header .meta { font-family: 'Arial', sans-serif; font-size: 13px; color: #a8c4e0; margin-top: 12px; }
+  header .stats { display: flex; justify-content: center; gap: 40px; margin-top: 36px; flex-wrap: wrap; }
+  header .stat { text-align: center; }
+  header .stat .num { font-size: 36px; font-weight: bold; color: #fff; line-height: 1; }
+  header .stat .label { font-family: 'Arial', sans-serif; font-size: 11px; color: #a8c4e0; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* LAYOUT */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 32px; }
+
+  /* SECTION HEADERS */
+  .section-header {
+    border-left: 4px solid var(--blue);
+    padding: 6px 0 6px 16px;
+    margin: 52px 0 24px;
+  }
+  .section-header .section-num { font-family: 'Arial', sans-serif; font-size: 11px; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase; }
+  .section-header h2 { font-size: 22px; font-weight: normal; color: var(--navy); margin-top: 4px; }
+
+  /* FIELD GROUPS */
+  .field-group {
+    background: var(--navy);
+    color: white;
+    padding: 8px 16px;
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 28px 0 12px;
+    letter-spacing: 0.04em;
+  }
+
+  /* QUESTIONS */
+  .question { padding: 10px 14px; margin: 6px 0; border-left: 3px solid var(--border); font-size: 15px; }
+  .question .q-label { font-family: 'Arial', sans-serif; font-weight: bold; color: var(--blue); font-size: 13px; }
+  .question.answered {
+    background: var(--lightgreen);
+    border-left-color: var(--green);
+    padding: 16px;
+    border-radius: 0 4px 4px 0;
+    margin: 12px 0;
+  }
+  .question.answered .q-label { color: var(--green); }
+  .answered-content { margin-top: 10px; font-size: 14px; color: #333; line-height: 1.65; }
+  .answered-content .attribution { font-family: 'Arial', sans-serif; font-weight: bold; font-size: 13px; color: var(--green); margin-bottom: 6px; }
+  .answered-content blockquote { font-style: italic; border-left: 2px solid var(--green); padding-left: 12px; margin: 8px 0; color: #444; }
+
+  /* FINDING CARDS */
+  .finding-card {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    margin: 12px 0;
+  }
+  .finding-card h4 { color: var(--navy); font-size: 16px; margin-bottom: 8px; }
+  .finding-card p { font-size: 14px; color: #444; line-height: 1.6; }
+  .finding-card .links { margin-top: 10px; font-size: 13px; font-family: 'Arial', sans-serif; }
+  .finding-card.pending {
+    border-color: #d97706;
+    background: var(--lightamber);
+  }
+  .finding-card.pending h4 { color: #92400e; }
+
+  /* PLACEHOLDER */
+  .placeholder {
+    border: 2px dashed var(--border);
+    border-radius: 4px;
+    padding: 28px;
+    margin: 12px 0;
+    text-align: center;
+    color: var(--grey);
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+  }
+  .placeholder .ph-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #aaa; margin-bottom: 8px; }
+
+  /* LINKS */
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .cite { font-size: 13px; font-family: 'Arial', sans-serif; }
+
+  /* FUNDING TABLE */
+  .funding-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+  .funding-table th { background: var(--blue); color: white; padding: 9px 12px; text-align: left; font-family: 'Arial', sans-serif; font-weight: bold; font-size: 12px; }
+  .funding-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .funding-table tr:nth-child(even) td { background: var(--lightgrey); }
+  .funding-table .urgent { color: #b91c1c; font-weight: bold; }
+
+  /* RESEARCHER */
+  .researcher { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .researcher .r-name { font-weight: bold; color: var(--navy); }
+  .researcher .r-title { font-size: 12px; color: var(--grey); font-family: 'Arial', sans-serif; font-style: italic; margin-top: 2px; }
+  .researcher .r-inst { font-size: 13px; color: var(--grey); }
+  .researcher .r-note { font-size: 12px; color: var(--green); font-family: 'Arial', sans-serif; font-style: italic; margin-top: 3px; }
+
+  /* COLLAB BOX */
+  .collab-box { background: var(--lightgrey); border: 1px solid var(--border); border-radius: 4px; padding: 24px; margin: 16px 0; font-size: 14px; color: var(--grey); font-style: italic; }
+
+  /* INTRO */
+  .intro-box { background: var(--lightgrey); border-left: 4px solid var(--blue); padding: 20px 24px; margin: 28px 0; font-size: 15px; line-height: 1.7; }
+
+  /* DIVIDER */
+  hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+  /* FOOTER */
+  footer { background: var(--navy); color: #a8c4e0; text-align: center; padding: 36px 40px; margin-top: 60px; font-family: 'Arial', sans-serif; font-size: 12px; line-height: 1.8; }
+  footer a { color: #a8c4e0; }
+
+  /* LAST UPDATED */
+  .last-updated { text-align: right; font-family: 'Arial', sans-serif; font-size: 12px; color: #aaa; font-style: italic; margin-top: 8px; }
+
+  @media (max-width: 600px) {
+    header { padding: 40px 20px; }
+    header h1 { font-size: 24px; }
+    .container { padding: 0 16px; }
+    nav { padding: 10px 16px; flex-direction: column; gap: 8px; }
+    header .stats { gap: 24px; }
+    .funding-table { font-size: 11px; }
+  }
+
+  /* Scroll offset for sticky nav */
+  a[id], section[id], h2[id] {
+    scroll-margin-top: 52px;
+  }
+</style>
+</head>
+
+<!-- NAVIGATION -->
+<nav>
+  <span class="nav-title">ARPKD Research Network · Issue 4 · November 2026</span>
+  <a href="https://johnson7707.github.io/arpkd-research">Research Document →</a>
+</nav>
+
+<!-- SIDEBAR -->
+<div id="sidebar">
+  <div class="sb-title">November 2026<br>Issue 4 · In Progress</div>
+  <a href="#findings-framework">All Findings</a>
+  <div class="sb-sep"></div>
+  <div class="sb-section">By Field</div>
+  <a href="#genetics">Genetics / Variants</a>
+  <a href="#biliary">Biliary Biology</a>
+  <a href="#therapy">Therapy / Delivery</a>
+  <a href="#network">Network</a>
+  <div class="sb-sep"></div>
+  <a href="https://johnson7707.github.io/arpkd-research/October2026.html">← Issue 3 (October)</a>
+</div>
+
+<!-- WIP BANNER -->
+<div class="wip-banner">
+  <strong>🔄 Issue 4 is being compiled throughout October 2026.</strong> This page updates as new findings are added. Final version sends November 1, 2026. <a href="mailto:nathaniel_johnson@yahoo.com" style="color:var(--amber);font-weight:bold;">Subscribe to be notified when finalized →</a>
+</div>
+
+<header>
+  <div class="issue-label">November 2026 · Issue 4 · In Progress</div>
+  <h1>ARPKD Research Network Newsletter</h1>
+  <div class="meta">Nathan &amp; Flora Johnson &nbsp;·&nbsp; nathaniel_johnson@yahoo.com &nbsp;·&nbsp; Sent monthly</div>
+  <div class="stats">
+    <div class="stat"><div class="num">67</div><div class="label">Investigators</div></div>
+    <div class="stat"><div class="num">13</div><div class="label">Countries</div></div>
+    <div class="stat"><div class="num" id="findings-count">1</div><div class="label">Findings This Month</div></div>
+    <div class="stat"><div class="num" id="days-count">31</div><div class="label">Days Until Send</div></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="last-updated">Last updated: October 1, 2026 · 1 finding · Added Oct 1: Huang H et al. Gene 2026 (PMID 42551719 — PKHD1 exonic splice disruption in Caroli disease; c.10926G>A genomic position confirmed chr6:51,659,200)</div>
+
+  <div class="intro-box">
+    Our names are Nathan and Flora Johnson. We are the parents of a child with ARPKD-CHF. This newsletter tracks research developments across hepatology, biliary biology, gene therapy, organoid modeling, and genetics. It is sent to 67 investigators across 13 countries on the first of each month. This page is a live preview of Issue 4 — updated throughout October as new findings are logged.
+  </div>
+
+  <!-- ALL FINDINGS ANCHOR -->
+  <a id="findings-framework"></a>
+  <a id="genetics"></a>
+
+  <!-- FINDING 1 -->
+  <div class="finding-card">
+    <h4>⭐⭐ PKHD1 missense variant at last exon nucleotide (-1G position) causes complete exon skipping in Caroli disease — UREC urine RNA testing method validated for PKHD1 variant reclassification — Gene (August 4, 2026 online / November 20, 2026 print) <span style="display:inline-block;background:#1E7C4A;color:#fff;font-size:11px;padding:2px 8px;border-radius:4px;margin-left:8px;font-family:Arial,sans-serif;vertical-align:middle;">📌 NEW · Oct 1, 2026</span></h4>
+
+    <p><a href="https://doi.org/10.1016/j.gene.2026.150340" target="_blank">Huang H, Cheng C, Chen P, Yang F, Pan S, Xie F, Zhao S, Chen X (corresponding). "A novel PKHD1 missense variant disrupting splicing in a fetus with Caroli disease." <em>Gene</em> 1011:150340, November 20, 2026. Published online August 4, 2026. DOI: 10.1016/j.gene.2026.150340. PMID: 42551719. ⚠️ NOT open access — Elsevier all rights reserved. ✅ Abstract and highlights confirmed October 1, 2026. Case Report.</a></p>
+
+    <p><strong>Case:</strong> Fetus at 23 weeks gestation. Hepatic cysts on ultrasound, "central dot" sign on MRI (Caroli disease), ARPKD features, oligohydramnios. Exome sequencing: paternal nonsense c.5323C>T (Arg1775*); two maternal missense variants c.6682G>C (Glu2228Gln) and c.8012G>T (Arg2671Leu).</p>
+
+    <p><strong>Key finding — c.6682G>C is the last nucleotide of exon 40 (-1G position):</strong> Minigene assay confirmed complete exon 40 skipping → in-frame deletion of 64 amino acids (Gly2164_Arg2227del) within a β-barrel domain of fibrocystin. AlphaFold3 predicts this deletion compromises β-barrel structural stability. The variant was initially annotated as missense (Glu2228Gln) but its primary effect is splice site disruption — not amino acid substitution.</p>
+
+    <p><strong>Four highlights with direct ARPKD-CHF implications:</strong></p>
+    <p>(1) <strong>Exonic last-nucleotide (-1G) variants cause severe splice disruption and exon skipping.</strong> This validates a variant class that is likely underdiagnosed across PKHD1 variant databases — many variants annotated as missense at exon-intron boundaries may be primarily splice disruptors.</p>
+    <p>(2) <strong>Systematic retrospective re-evaluation of unclassified PKHD1 VUS using splice-aware tools is needed.</strong> Any PKHD1 VUS with "predicted splice impact" annotation should be re-evaluated with SpliceAI and, where possible, functional RNA analysis.</p>
+    <p>(3) <strong>Endogenous RNA splicing in patient-derived primary cells (URECs/organoids) reveals tissue-specific penetrance.</strong> URECs (urine-derived renal epithelial cells) can be collected non-invasively from a urine sample and used to test whether a specific PKHD1 variant causes exon skipping in the patient's own cells. Tissue-specific penetrance means splicing may differ between kidney and liver cells — directly relevant to liver-dominant ARPKD-CHF.</p>
+    <p>(4) <strong>Structural and transcriptomic integration refines genotype-phenotype spectrum in ARPKD/Caroli disease.</strong></p>
+
+    <p><strong>⚠️ What this paper does NOT establish for our daughter's variant c.10926G>A (Met3642Ile):</strong> We confirmed October 1, 2026 that c.10926G>A is at genomic position chr6:51,659,200 (hg38) — confirmed from ClinVar primary database. This position is 268 bp interior to the exon that also contains c.10658 (Ile3553Thr, chr6:51,659,468). Because the genomic distance (268 bp) equals the CDS distance exactly, there are no introns between the two variants — they are in the same exon. Therefore c.10926G>A is NOT a -1G last-nucleotide splice variant of the class studied in Huang et al. It is located within the interior of its exon, not at the splice donor boundary. Its splice disruption (if real) would operate through ESE motif disruption — a different and less predictable mechanism. ClinVar: Conflicting classifications — all three reporting laboratories classify as VUS (uncertain significance). No published functional RNA data for c.10926G>A exists.</p>
+
+    <p><strong>What the Huang paper still opens for c.10926G>A:</strong> Highlight 3 — UREC RNA testing — applies regardless of mechanism class. A urine sample from Gianna could directly test whether c.10926G>A causes exon skipping in her own cells, via endogenous RNA analysis without biopsy, iPSC reprogramming, or organoid culture. This is the most direct available experiment. Highlight 2 — systematic VUS re-evaluation — also applies: c.10926G>A has computational splice prediction and should be formally evaluated with SpliceAI (chr6:51,659,200 G>A lookup at spliceailookup.broadinstitute.org).</p>
+
+    <p><strong>Companion paper:</strong> PMID 42697289 ("Structural and diagnostic implications of exonic splice-disrupting variants in PKHD1-related Caroli disease") refers to the Huang et al. case report — likely a review or commentary. Not yet indexed. New contact: Xinlin Chen (corresponding author of Huang et al.) — email not yet identified. Priority contact for UREC testing methodology.</p>
+  </div>
+
+  <div class="placeholder">
+    <div class="ph-label">More findings being added throughout October</div>
+    <div>Check back as the month progresses — 1 finding · Last added: October 1, 2026</div>
+  </div>
+
+  <p style="font-size:13px;color:var(--grey);margin-top:16px;font-style:italic;">All findings from this period will also be incorporated in the full research document. <a href="https://johnson7707.github.io/arpkd-research?utm_source=nov2026_newsletter&utm_medium=email&utm_campaign=nov2026">View the full research document →</a></p>
+
+  <hr>
+
+  <!-- NETWORK SECTION -->
+  <a id="network"></a>
+  <h2 style="font-size:20px;color:var(--navy);margin:32px 0 16px 0;font-family:Arial,sans-serif;">Research Network — 67 Investigators · 13 Countries</h2>
+  <p style="font-size:13px;color:var(--grey);margin-bottom:20px;">All researchers listed have given permission or are receiving this newsletter in their capacity as active investigators in relevant fields.</p>
+
+</div><!-- end container -->
+
+<footer>
+  <div>ARPKD Research Network · Issue 4 (In Progress) · November 2026</div>
+  <div style="margin-top:8px;">Nathan and Flora Johnson · <a href="mailto:nathaniel_johnson@yahoo.com">nathaniel_johnson@yahoo.com</a></div>
+  <div style="margin-top:8px;"><a href="https://johnson7707.github.io/arpkd-research?utm_source=nov2026_newsletter&utm_medium=email&utm_campaign=nov2026">View Research Document →</a> &nbsp;·&nbsp; <a href="https://johnson7707.github.io/arpkd-research/October2026.html">View Issue 3 →</a></div>
+  <div style="margin-top:16px;font-size:11px;color:#6a8aaa;">To unsubscribe, reply to nathaniel_johnson@yahoo.com. All personal communications included only with explicit written permission.</div>
+</footer>
+
+<script>
+  // Update days until send
+  const sendDate = new Date('2026-11-01');
+  const today = new Date();
+  const days = Math.max(0, Math.ceil((sendDate - today) / (1000 * 60 * 60 * 24)));
+  document.getElementById('days-count').textContent = days;
+
+  // Sidebar active state on scroll
+  const sections = document.querySelectorAll('a[id]');
+  const sideLinks = document.querySelectorAll('#sidebar a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        sideLinks.forEach(link => link.classList.remove('active'));
+        const activeLink = document.querySelector(`#sidebar a[href="#${entry.target.id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
