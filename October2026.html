@@ -308,14 +308,14 @@
 </div>
 
 <header>
-  <div class="issue-label">October 2026 · Issue 3 · In Progress</div>
+  <div class="issue-label">October 2026 · Issue 3 · Sent Oct 1, 2026</div>
   <h1>ARPKD Research Network Newsletter</h1>
   <div class="meta">Nathan &amp; Flora Johnson &nbsp;·&nbsp; nathaniel_johnson@yahoo.com &nbsp;·&nbsp; Sent monthly</div>
   <div class="stats">
-    <div class="stat"><div class="num">45</div><div class="label">Investigators</div></div>
-    <div class="stat"><div class="num">12</div><div class="label">Countries</div></div>
+    <div class="stat"><div class="num">67</div><div class="label">Investigators</div></div>
+    <div class="stat"><div class="num">13</div><div class="label">Countries</div></div>
     <div class="stat"><div class="num" id="findings-count">0</div><div class="label">Findings This Month</div></div>
-    <div class="stat"><div class="num" id="days-count">26</div><div class="label">Days Until Send</div></div>
+    <div class="stat"><div class="num" id="days-count">Oct 1</div><div class="label">Sent</div></div>
   </div>
 </header>
 
@@ -1152,7 +1152,6 @@
   const sendDate = new Date('2026-10-01');
   const today = new Date();
   const days = Math.max(0, Math.ceil((sendDate - today) / (1000 * 60 * 60 * 24)));
-  document.getElementById('days-count').textContent = days;
   document.getElementById('findings-count').textContent = '17';
 
   // Sidebar active state on scroll
